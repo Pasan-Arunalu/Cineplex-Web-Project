@@ -1,7 +1,7 @@
-body{
+/* body{
     background-image: url(img/4b14afd4-0c19-4763-8fc2-4dcdbedd6e73.png);
     background-size: cover;
-}
+} */
 
 .navbar{
     background-color: transparent;
@@ -33,7 +33,7 @@ body{
 }
 
 .navbar-brand.me-auto:hover{
-    color: #C3073F;
+    color: #D4FF9D;
     transition: 0.5s;
 }
 
@@ -66,7 +66,7 @@ body{
 }
 
 .offcanvas-body{
-    background-color: #1A1D1D;
+    background-color: #03131A;
 }
 
 .offcanvas-body ul li a{
@@ -78,12 +78,12 @@ body{
 }
 
 .offcanvas-body .navbar-nav .nav-item:first-child .nav-link:hover{
-    color: #950740;
+    color: #D4FF9D;
 }
 
 .offcanvas-body .navbar-nav .nav-item:not(:first-child) .nav-link:hover,
 .offcanvas-body .navbar-nav .nav-item:not(:first-child) .nav-link:active {
-    color: #950740;
+    color: #D4FF9D;
 }
 
 
@@ -106,7 +106,7 @@ body{
         transform: translate(-50%);
         width: 0;
         height: 2px;
-        background-color: #C3073F;
+        background-color: #D4FF9D;
         visibility: hidden;
         transition: 0.5s;
     }

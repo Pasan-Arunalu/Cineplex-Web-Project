@@ -35,7 +35,7 @@
                   <a class="nav-link mx-lg-2" href="#">Deals</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link mx-lg-2" href="#">About</a>
+                  <a class="nav-link mx-lg-2" href="#">About Us</a>
                 </li>
               </ul>
             </div>
@@ -48,11 +48,6 @@
         </div>
       </nav>
       <!--Navbar End-->
-    
-    <div style= "height:5000px">
-
-    </div>
-
 
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
