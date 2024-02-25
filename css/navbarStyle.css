@@ -1,0 +1,123 @@
+body{
+    background-image: url(img/4b14afd4-0c19-4763-8fc2-4dcdbedd6e73.png);
+    background-size: cover;
+}
+
+.navbar{
+    background-color: transparent;
+    transition: background-color 1.5s;
+    height: 80px;
+    padding: 0.5rem;
+}
+
+.navbar-scrolled {
+    background-color: rgba(3, 19, 26, 0.6); 
+    transition: background-color 1..5s ;
+    box-shadow: 0 0 10px snow;
+}
+
+.nav-brand{
+    font-weight: 500;
+    color: snow;
+    font-size: 24px;
+    transition: 0.5s;
+}
+
+.navbar-brand.me-auto{
+    color: snow;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+    font-size: 30px;
+    margin-left: 30px;
+    transition: 0.5s;
+}
+
+.navbar-brand.me-auto:hover{
+    color: #C3073F;
+    transition: 0.5s;
+}
+
+.login-button{
+    background-color: #D4FF9D;
+    color: #03131A;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s background-color;
+    margin-right: 30px;
+    transition: 1s;
+}
+
+.login-button:hover{
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+.navbar-toggler{
+    border: none;
+    font-size: 1.25rem;
+}
+
+.navbar-toggler:focus, .btn-close:focus{
+    box-shadow: none;
+    outline: none;
+}
+
+.offcanvas-body{
+    background-color: #1A1D1D;
+}
+
+.offcanvas-body ul li a{
+    color: snow;
+}
+
+.offcanvas-body .navbar-nav .nav-item:first-child .nav-link{
+    color: snow;
+}
+
+.offcanvas-body .navbar-nav .nav-item:first-child .nav-link:hover{
+    color: #950740;
+}
+
+.offcanvas-body .navbar-nav .nav-item:not(:first-child) .nav-link:hover,
+.offcanvas-body .navbar-nav .nav-item:not(:first-child) .nav-link:active {
+    color: #950740;
+}
+
+
+.nav-link{
+    color: #1A1D1D;
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-link:hover, .nav-link:active{
+    color: snow;
+}
+
+@media(min-width:991px){
+    .nav-link::before{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%);
+        width: 0;
+        height: 2px;
+        background-color: #C3073F;
+        visibility: hidden;
+        transition: 0.5s;
+    }
+
+    .nav-link:hover::before, .nav-link:hover::before{
+        width: 100%;
+        visibility: visible;
+    }
+
+    .offcanvas-body {
+        background-color: transparent; 
+    }
+
+}
