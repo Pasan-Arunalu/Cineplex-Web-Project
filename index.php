@@ -4,16 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    
-    <link rel="stylesheet" href="css/indexStyle.css">
-
+ 
     <link rel="stylesheet" href="css/navbarStyle.css">
 
+    <link rel="stylesheet" href="css/indexStyle.css">
+    
     <title>Document</title>
 
 </head>
@@ -95,11 +95,13 @@
     <!-- now showing carousel -->
 <div class="container-fluid">
     <div id="nscarousel" class="carousel slide">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#nscarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#nscarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#nscarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
+    <div class="carousel-indicators">
+    <button type="button" data-bs-target="#nscarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#nscarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#nscarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#nscarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+</div>
+
         <div class="carousel-inner">
             <!-- slide 1 -->
             <div class="carousel-item active">
@@ -108,19 +110,34 @@
                         <div class="col">
                             <div class="card">
                                 <img src="img/posters-now-showing/159114.jpg" class="card-img-top img-fluid" alt="...">
-                                <div class="card-body"></div>
+                                <div class="card-body">
+                                    <div class="cardbtncontainer">
+                                        <button class="crdbtn1"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button>
+                                        <button class="crdbtn2"><img src="img/svg/play-btn.svg" alt="" style="height:25px; width:25px; margin: 5px;">Watch Trailer</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col">
                             <div class="card">
                                 <img src="img/posters-now-showing/159394.jpg" class="card-img-top img-fluid" alt="...">
-                                <div class="card-body"></div>
+                                <div class="card-body">
+                                <div class="cardbtncontainer">
+                                        <button class="crdbtn1"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button>
+                                        <button class="crdbtn2"><img src="img/svg/play-btn.svg" alt="" style="height:25px; width:25px; margin: 5px;">Watch Trailer</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col">
                             <div class="card">
                                 <img src="img/posters-now-showing/161007.jpg" class="card-img-top img-fluid" alt="...">
-                                <div class="card-body"></div>
+                                <div class="card-body">
+                                <div class="cardbtncontainer">
+                                        <button class="crdbtn1"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button>
+                                        <button class="crdbtn2"><img src="img/svg/play-btn.svg" alt="" style="height:25px; width:25px; margin: 5px;">Watch Trailer</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -133,19 +150,34 @@
                         <div class="col">
                             <div class="card">
                                 <img src="img/posters-now-showing/161038.jpg" class="card-img-top img-fluid" alt="...">
-                                <div class="card-body"></div>
+                                <div class="card-body">
+                                <div class="cardbtncontainer">
+                                        <button class="crdbtn1"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button>
+                                        <button class="crdbtn2"><img src="img/svg/play-btn.svg" alt="" style="height:25px; width:25px; margin: 5px;">Watch Trailer</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col">
                             <div class="card">
                                 <img src="img/posters-now-showing/161273.jpg" class="card-img-top img-fluid" alt="...">
-                                <div class="card-body"></div>
+                                <div class="card-body">
+                                <div class="cardbtncontainer">
+                                        <button class="crdbtn1"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button>
+                                        <button class="crdbtn2"><img src="img/svg/play-btn.svg" alt="" style="height:25px; width:25px; margin: 5px;">Watch Trailer</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col">
                             <div class="card">
                                 <img src="img/posters-now-showing/161485.jpg" class="card-img-top img-fluid" alt="...">
-                                <div class="card-body"></div>
+                                <div class="card-body">
+                                <div class="cardbtncontainer">
+                                        <button class="crdbtn1"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button>
+                                        <button class="crdbtn2"><img src="img/svg/play-btn.svg" alt="" style="height:25px; width:25px; margin: 5px;">Watch Trailer</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -158,19 +190,59 @@
                         <div class="col">
                             <div class="card">
                                 <img src="img/posters-now-showing/56489f60-395a-4066-977a-4dbaaab01ee9.jpg" class="card-img-top img-fluid" alt="...">
-                                <div class="card-body"></div>
+                                <div class="card-body">
+                                <div class="cardbtncontainer">
+                                        <button class="crdbtn1"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button>
+                                        <button class="crdbtn2"><img src="img/svg/play-btn.svg" alt="" style="height:25px; width:25px; margin: 5px;">Watch Trailer</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col">
                             <div class="card">
                                 <img src="img/posters-now-showing/b895a256-f386-4400-8d40-5430435c3e5c.jpg" class="card-img-top img-fluid" alt="...">
-                                <div class="card-body"></div>
+                                <div class="card-body">
+                                <div class="cardbtncontainer">
+                                        <button class="crdbtn1"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button>
+                                        <button class="crdbtn2"><img src="img/svg/play-btn.svg" alt="" style="height:25px; width:25px; margin: 5px;">Watch Trailer</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col">
                             <div class="card">
                                 <img src="img/posters-now-showing/f96f1cfd-d2ae-4950-8fcf-a071e757028e.jpg" class="card-img-top img-fluid" alt="...">
-                                <div class="card-body"></div>
+                                <div class="card-body">
+                                <div class="cardbtncontainer">
+                                        <button class="crdbtn1"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button>
+                                        <button class="crdbtn2"><img src="img/svg/play-btn.svg" alt="" style="height:25px; width:25px; margin: 5px;">Watch Trailer</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--slide 4-->
+            <div class="carousel-item">
+                <div class="d-flex align-items-center justify-content-center h-100">
+                    <div class="row">
+                        <div class="colsearch">
+                            <div class="cardsearch">
+                                <div class="card-body-search">
+                                    <form name="search" action="GET">
+                                        <div class="input-group">
+                                            <h3>Not finding what you are looking for?</h3>
+                                            <div class="inputs">
+                                                <input class="searchinput" type="text" name="query" placeholder="Search movies...">
+                                                <a class="searchicon" href=""><img src="img/svg/search.svg" alt=""></a> 
+                                                <br> <br> 
+                                                <!-- <button class="searchbtn" type="submit">Search</button> <br> <br> -->
+                                                <button class="allmovies">All Movies</button>  
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -204,19 +276,34 @@
                         <div class="col">
                             <div class="card">
                                 <img src="img/uc-posters/uc1.jpg" class="card-img-top img-fluid" alt="...">
-                                <div class="card-body"></div>
+                                <div class="card-body">
+                                <div class="cardbtncontainer">
+                                        <button class="crdbtn1"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button>
+                                        <button class="crdbtn2"><img src="img/svg/play-btn.svg" alt="" style="height:25px; width:25px; margin: 5px;">Watch Trailer</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col">
                             <div class="card">
                                 <img src="img/uc-posters/uc2.jpg" class="card-img-top img-fluid" alt="...">
-                                <div class="card-body"></div>
+                                <div class="card-body">
+                                <div class="cardbtncontainer">
+                                        <button class="crdbtn1"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button>
+                                        <button class="crdbtn2"><img src="img/svg/play-btn.svg" alt="" style="height:25px; width:25px; margin: 5px;">Watch Trailer</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col">
                             <div class="card">
                                 <img src="img/uc-posters/uc3.jpg" class="card-img-top img-fluid" alt="...">
-                                <div class="card-body"></div>
+                                <div class="card-body">
+                                <div class="cardbtncontainer">
+                                        <button class="crdbtn1"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button>
+                                        <button class="crdbtn2"><img src="img/svg/play-btn.svg" alt="" style="height:25px; width:25px; margin: 5px;">Watch Trailer</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -229,49 +316,64 @@
                         <div class="col">
                             <div class="card">
                                 <img src="img/uc-posters/uc4.jpg" class="card-img-top img-fluid" alt="...">
-                                <div class="card-body"></div>
+                                <div class="card-body">
+                                <div class="cardbtncontainer">
+                                        <button class="crdbtn1"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button>
+                                        <button class="crdbtn2"><img src="img/svg/play-btn.svg" alt="" style="height:25px; width:25px; margin: 5px;">Watch Trailer</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col">
                             <div class="card">
                                 <img src="img/uc-posters/uc5.jpg" class="card-img-top img-fluid" alt="...">
-                                <div class="card-body"></div>
+                                <div class="card-body">
+                                <div class="cardbtncontainer">
+                                        <button class="crdbtn1"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button>
+                                        <button class="crdbtn2"><img src="img/svg/play-btn.svg" alt="" style="height:25px; width:25px; margin: 5px;">Watch Trailer</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col">
                             <div class="card">
                                 <img src="img/posters-now-showing/b895a256-f386-4400-8d40-5430435c3e5c.jpg" class="card-img-top img-fluid" alt="...">
-                                <div class="card-body"></div>
+                                <div class="card-body">
+                                <div class="cardbtncontainer">
+                                        <button class="crdbtn1"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button>
+                                        <button class="crdbtn2"><img src="img/svg/play-btn.svg" alt="" style="height:25px; width:25px; margin: 5px;">Watch Trailer</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!--slide 2-->
-            <!-- <div class="carousel-item">
+            <!--slide 4-->
+            <div class="carousel-item">
                 <div class="d-flex align-items-center justify-content-center h-100">
-                    <div id="uccard-group" class="row">
-                        <div class="col">
-                            <div class="card">
-                                <img src="img/posters-now-showing/161007.jpg" class="card-img-top img-fluid" alt="...">
-                                <div class="card-body"></div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card">
-                                <img src="img/posters-now-showing/161038.jpg" class="card-img-top img-fluid" alt="...">
-                                <div class="card-body"></div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card">
-                                <img src="img/posters-now-showing/161273.jpg" class="card-img-top img-fluid" alt="...">
-                                <div class="card-body"></div>
+                    <div class="row">
+                        <div class="colsearch">
+                            <div class="cardsearch">
+                                <div class="card-body-search">
+                                    <form name="search" action="GET">
+                                        <div class="input-group">
+                                            <h3>Not finding what you are looking for?</h3>
+                                            <div class="inputs">
+                                                <input class="searchinput" type="text" name="query" placeholder="Search movies...">
+                                                <a class="searchicon" href=""><img src="img/svg/search.svg" alt=""></a> 
+                                                <br> <br> 
+                                                <!-- <button class="searchbtn" type="submit">Search</button> <br> <br> -->
+                                                <button class="allmovies">All Movies</button>  
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#uccarousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -354,11 +456,17 @@
 </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" 
-    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 
+integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" 
+integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+<script src="navbar.js"></script>
+
+
 
     <!-- script for toogle between nowshowing and upcomings carousel -->
     <script>
@@ -366,11 +474,15 @@
             $("#btnNowShowing").click(function () {
                 $("#nscarousel").show();
                 $("#uccarousel").hide();
+                $(this).addClass("selected-link");
+                $("#btnUpcomings").removeClass("selected-link");
             });
     
             $("#btnUpcomings").click(function () {
                 $("#nscarousel").hide();
                 $("#uccarousel").show();
+                $(this).addClass("selected-link");
+                $("#btnNowShowing").removeClass("selected-link");
             });
         });
     </script>

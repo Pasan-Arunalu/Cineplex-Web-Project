@@ -1,8 +1,3 @@
-/* body{
-    background-image: url(img/4b14afd4-0c19-4763-8fc2-4dcdbedd6e73.png);
-    background-size: cover;
-} */
-
 .navbar{
     background-color: transparent;
     transition: background-color 1.5s;
@@ -10,10 +5,19 @@
     padding: 0.5rem;
 }
 
-.navbar-scrolled {
-    background-color: rgba(3, 19, 26, 0.6); 
-    transition: background-color 1..5s ;
-    box-shadow: 0 0 10px snow;
+.scrolled {
+    background-color: rgba(3, 19, 26, 0.9); 
+    transition: background-color 1s !important;
+    transition: box-shadow 0.3s;
+    box-shadow: 0 0 7px snow;
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
 }
 
 .nav-brand{
@@ -91,6 +95,7 @@
     color: #1A1D1D;
     font-weight: 500;
     position: relative;
+    margin: 10px;
 }
 
 .nav-link:hover, .nav-link:active{

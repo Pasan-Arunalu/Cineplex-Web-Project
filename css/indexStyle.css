@@ -4,16 +4,12 @@ Pastel Blue (#8FD6E8), Pastel Green (#D4FF9D) */
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 body {
-    background-image: url(img/wp11909358-dark-green-gradient-wallpapers.png);
+    background-image: url(img/b0e63b94-e461-4f65-9183-e8941cb2fa6c.png);
     background-size: cover;
-    backdrop-filter: blur(10px);
 }
 
-.container-fluid {
-    position: relative; /* Add this line to enable positioning for absolute child */
-}
-
-.carouselautoplaying {
+#carouselautoplaying {
+    top: 80px;
     width: 100%; /* Ensure the carousel takes the full width */
 }
 
@@ -25,7 +21,7 @@ body {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 120px;
+    height: 100px;
     background-color: rgba(3, 19, 26, 0.9); /* Add some transparency to the background */
     padding: 10px; /* Add padding for better appearance */
 }
@@ -36,7 +32,7 @@ body {
 
 .btnscontainer{
     display: flex;
-    height: 100px;
+    height: 80px;
     width: 800px;
     align-items: center;
     justify-content: center;
@@ -44,21 +40,21 @@ body {
 
 .crslbtn1,
 .crslbtn2{
-    height: 80px;
-    width: 250px;
+    height: 60px;
+    width: 200px;
     margin: 15px;
     background-color: #D4FF9D;
     color: #03131A;
     font-family: "League Spartan", sans-serif;
     font-weight: 500;
-    font-size: 25px;
-    border-radius: 50px;
+    font-size: 20px;
+    border-radius: 10px;
     border: transparent;
     transition: 1s;
 }
 
 .btnscontainer img{
-    height: 40px;
+    height: 30px;
 }
 
 .crslbtn1:hover,
@@ -76,20 +72,20 @@ body {
     .crslbtn1,
     .crslbtn2 {
         /* Adjust the size of buttons for smaller screens */
-        height: 30px;
-        width: 120px;
+        height: 25px;
+        width: 100px;
         font-size: 10px;
     }
 
     .btnscontainer img{
-        height: 18px;
+        height: 15px;
     }
 }
 
 
 /*now showing up comings links*/
 .nsanduc{
-    margin-top: 80px;
+    margin-top: 140px;
     height: 80px;
 
 }
@@ -97,7 +93,7 @@ body {
 .nsuc{
     height: 80px;
     width: 1100px;
-    margin-left: 20.9%;
+    margin-left: 18.5%;
     background-color: rgba(3, 19, 26, 0.7);
     color: snow;
     font-family: "League Spartan", sans-serif;
@@ -135,11 +131,22 @@ body {
     width: 90%;
 }
 
+.selected-link::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 2px;
+    background-color: snow;
+    transition: width 0.5s;
+}
 
 
 /* now showing carousel */
 #nscarousel {
-    margin-top: 50px; /* Adjust the margin as needed */
+    margin-top: 40px; 
 }
 
 .col {
@@ -149,8 +156,44 @@ body {
 .card {
     height: 600px;
     width: 350px;
-    background-color: rgba(3, 19, 26, 0.7);
-    
+    background-color: rgba(3, 19, 26, 0.7);    
+}
+
+.card-body{
+    height: 100px;
+    background-color: #0F1B24;
+}
+
+.cardbtncontainer{
+    margin-left: 10px;
+    display: flex;
+    height: 70px;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+}
+
+.crdbtn1,
+.crdbtn2 {
+    background-color: #D4FF9D;
+    width: 50%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #03131A;
+    font-family: "League Spartan", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 1s;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.crdbtn1:hover,
+.crdbtn2:hover {
+    transform: scale(1.1);
+    transition: 1s;
 }
 
 .col .card img {
@@ -159,11 +202,136 @@ body {
 
 }
 
+.hidden-column {
+    display: none;
+}
+
+.colsearch {
+    height: 700px;
+}
+
+.cardsearch {
+    height: 600px;
+    width: 350px;
+    background-color: rgba(3, 19, 26, 0.5);
+    border-radius: 30px;    
+}
+
+.card-body-search{
+    height: 600px;
+
+}
+
+.card-body-search form{
+    height:300px;
+    padding-top: 50%;
+}
+
+.card-body-search h3{
+    color: #D4FF9D;
+    text-align: center;
+}
+
+.input-group{
+    height: 300px;
+    justify-content: center;
+}
+
+.inputs {
+    margin-top: 30px;
+    height: 200px;
+    text-align: center;
+}
+
+.searchinput {
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    padding-right: 40px;
+}
+
+.searchicon {
+    position: absolute;
+    top: 42%;
+    right: 35px; 
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+.searchicon img {
+    height: 25px;
+    width: 25px;
+}
+
+/* .searchbtn {
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    background-color: #D4FF9D;
+} */
+
+.allmovies {
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    background-color: #D4FF9D;
+    color: #03131A;
+    font-weight: 500;
+    font-size: 15px;
+    transition: 1s;
+}
+
+.allmovies:hover {
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+
+/* .searchcardbtncontainer {
+    margin-left: 25px;
+    padding-top: 80%;
+    height: 300px;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchcrdbtn1,
+.searchcrdbtn2 {
+    background-color: #D4FF9D;
+    width: 50%;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    color: #03131A;
+    font-family: "League Spartan", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 1s;
+    margin: 5px;
+    border-radius: 10px;
+    margin-top: 15%;
+    margin-left: 25%;
+}
+
+.searchcrdbtn1:hover,
+.searchcrdbtn2:hover {
+    transform: scale(1.1);
+    transition: 1s;
+} */
+
+
 
 /*up comings carousel*/
 #uccarousel {
     display: none;
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 
@@ -213,7 +381,7 @@ body {
 
 .adscontainer{
     margin-top: 150px;
-    height: 1500px;
+    height: 1200px;
 }
 
 .ad1{
@@ -285,7 +453,7 @@ body {
     color: snow;
     margin-top: 40px;
     font-family: "League Spartan", sans-serif;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 
@@ -320,7 +488,7 @@ body {
     color: snow;
     margin-top: 40px;
     font-family: "League Spartan", sans-serif;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 
@@ -349,11 +517,12 @@ body {
     justify-content: center;
     height: 80px;
     align-items: center;
+    margin-left: 3%;
 }
 
 .fot-item {
     margin-right: 50px;
-    font-size: 20px;
+    font-size: 15px;
     justify-content: center;
 }
 
