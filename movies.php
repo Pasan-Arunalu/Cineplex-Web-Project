@@ -1,3 +1,9 @@
+<?php
+include("connection.php");
+
+include("caroFetch.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +30,10 @@
         <div class="moviescontainer">
           <div class="moviecard">
             <div class="movieimg">
-            
+              <img src="<?php echo $img7; ?>" alt="">
+            </div>
+            <div class="movietitle">
+              <p><?php echo $title7; ?></p>
             </div>
             <div class="buy-tickets-btn">
               <button class="btn btn-primary"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button> <br> <br>
@@ -38,7 +47,10 @@
         <div class="moviescontainer">
           <div class="moviecard">
             <div class="movieimg">
-            
+              <img src="<?php echo $img8; ?>" alt="">
+            </div>
+            <div class="movietitle">
+              <p><?php echo $title8; ?></p>
             </div>
             <div class="buy-tickets-btn">
               <button class="btn btn-primary"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button> <br> <br>
@@ -52,7 +64,10 @@
         <div class="moviescontainer">
           <div class="moviecard">
             <div class="movieimg">
-            
+              <img src="<?php echo $img9; ?>" alt="">
+            </div>
+            <div class="movietitle">
+              <p><?php echo $title9; ?></p>
             </div>
             <div class="buy-tickets-btn">
               <button class="btn btn-primary"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button> <br> <br>
@@ -69,7 +84,10 @@
         <div class="moviescontainer">
           <div class="moviecard">
             <div class="movieimg">
-            
+              <img src="<?php echo $img10; ?>" alt="">
+            </div>
+            <div class="movietitle">
+              <p><?php echo $title10; ?></p>
             </div>
             <div class="buy-tickets-btn">
               <button class="btn btn-primary"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button> <br> <br>
@@ -83,7 +101,10 @@
         <div class="moviescontainer">
           <div class="moviecard">
             <div class="movieimg">
-            
+              <img src="<?php echo $img11; ?>" alt="">
+            </div>
+            <div class="movietitle">
+              <p><?php echo $title11; ?></p>
             </div>
             <div class="buy-tickets-btn">
               <button class="btn btn-primary"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button> <br> <br>
@@ -97,7 +118,10 @@
         <div class="moviescontainer">
           <div class="moviecard">
             <div class="movieimg">
-            
+              <img src="<?php echo $img12; ?>" alt="">
+            </div>
+            <div class="movietitle">
+              <p><?php echo $title12; ?></p>
             </div>
             <div class="buy-tickets-btn">
               <button class="btn btn-primary"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button> <br> <br>
@@ -114,7 +138,10 @@
         <div class="moviescontainer">
           <div class="moviecard">
             <div class="movieimg">
-            
+              <img src="<?php echo $img13; ?>" alt="">
+            </div>
+            <div class="movietitle">
+              <p><?php echo $title13; ?></p>
             </div>
             <div class="buy-tickets-btn">
               <button class="btn btn-primary"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button> <br> <br>
@@ -128,7 +155,10 @@
         <div class="moviescontainer">
           <div class="moviecard">
             <div class="movieimg">
-            
+              <img src="<?php echo $img14; ?>" alt="">
+            </div>
+            <div class="movietitle">
+              <p><?php echo $title14; ?></p>
             </div>
             <div class="buy-tickets-btn">
               <button class="btn btn-primary"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button> <br> <br>
@@ -142,7 +172,10 @@
         <div class="moviescontainer">
           <div class="moviecard">
             <div class="movieimg">
-            
+              <img src="<?php echo $img15; ?>" alt="">
+            </div>
+            <div class="movietitle">
+              <p><?php echo $title15; ?></p>
             </div>
             <div class="buy-tickets-btn">
               <button class="btn btn-primary"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button> <br> <br>

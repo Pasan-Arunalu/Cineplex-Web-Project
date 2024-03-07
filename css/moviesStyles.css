@@ -16,8 +16,8 @@ body {
 
 .moviecard {
     display: inline-block;
-    height: 400px;
-    margin: 10px;
+    height: 480px;
+    margin: 20px;
     padding: 10px;
     border: 1px solid #ddd; 
     border-radius: 10px;
@@ -34,20 +34,49 @@ body {
     position: relative;
 }
 
+.movieimg img{
+    background-size: cover;
+    background-position: center;
+    height: 380px; 
+    width: 280px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.movietitle {
+    height: 80px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(3, 19, 26, 0.5);
+    border-radius: 0 0 10px 10px;
+}
+
+.movietitle p {
+    text-align: center;
+    margin: 0; 
+    font-size: 30px;
+    font-weight: 500;
+    color: snow;
+}
+
+
 .buy-tickets-btn {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    opacity: 0; /* Initial opacity set to 0 */
+    opacity: 0; 
     width: 90%;
     height: 90%;
-    transition: opacity 0.8s; /* Transition opacity property */
+    transition: opacity 0.8s; 
 }
 
 .moviecard:hover .buy-tickets-btn {
     opacity: 1; /* Set opacity to 1 on hover */
-    background-color: rgba(3, 19, 26, 0.3);
+    background-color: rgba(3, 19, 26, 0.5);
     transition: 0.8s;
 }
 

@@ -1,8 +1,6 @@
 <?php
 include("connection.php");
-?>
 
-<?php
 include("caroFetch.php");
 ?>
 

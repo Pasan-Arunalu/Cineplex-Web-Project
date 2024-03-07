@@ -1,56 +1,65 @@
 <?php
 include("connection.php");
 
-$msg = "";
 
-if(isset($_POST['btnadd'])){
-    $location = "images/"; 
-    $maxSize = 10000000;
-    $checked = true;
-    $fileExt = array('jpg','jpeg','png');
-    
-    $name = basename($_FILES['movieUpload']['name']);
-    $temp_name = $_FILES['movieUpload']['tmp_name'];
-    $type = $_FILES['movieUpload']['type'];
-    $size = $_FILES['movieUpload']['size'];    
-    $ext = strtolower(pathinfo($name, PATHINFO_EXTENSION));
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["btnadd"])) {
+    // Validate input
+    $id = isset($_POST["id"]) ? intval($_POST["id"]) : 0;
+    $title = isset($_POST["txtmovie"]) ? htmlspecialchars($_POST["txtmovie"]) : "";
+    $description = isset($_POST["txtdes"]) ? htmlspecialchars($_POST["txtdes"]) : "";
+    $video_url = isset($_POST["txturl"]) ? htmlspecialchars($_POST["txturl"]) : "";
 
-    if(file_exists($location . $name)){
-        $msg = "File already exists";
-        $checked = false;
-    }
-    if($size > $maxSize){
-        $msg = "File is too large";
-        $checked = false;
-    }
-    if(!in_array($ext, $fileExt)){
-        $msg = "Invalid file type";
-        $checked = false;
-    }
+    // Validate file upload
+    $target_dir = "images/";
+    $target_file = $target_dir . basename($_FILES["movieUpload"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-    if($checked){
-        $id = isset($_POST['id']) ? $_POST['id'] : null;
-
-        if ($id !== null) {
-            $title = $_POST['txtmovie'];
-            $description = $_POST['txtdes'];
-            $video_url = $_POST['txturl'];
-            $path = $location . $name;
-
-            $sql = "INSERT INTO movies (id, title, description, image_path, video_url) VALUES ('$id', '$title', '$description', '$path', '$video_url')";
-            
-            if(mysqli_query($conn, $sql)){
-                move_uploaded_file($temp_name, $location . $name);
-                $msg = "Movie Record Inserted";
-            } else {
-                $msg = mysqli_error($conn);
-            }
-        } else {
-            $msg = "Movie ID is not set.";
+    // Check if image file is a actual image or fake image
+    if(isset($_POST["btnadd"])) {
+        $check = getimagesize($_FILES["movieUpload"]["tmp_name"]);
+        if($check === false) {
+            $message = "File is not an image.";
+            $uploadOk = 0;
         }
-    } 
+    }
+
+    // Check file size
+    if ($_FILES["movieUpload"]["size"] > 500000) {
+        $message = "Sorry, your file is too large.";
+        $uploadOk = 0;
+    }
+
+    // Allow certain file formats
+    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
+        $message = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        $uploadOk = 0;
+    }
+
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        $message = "Sorry, your file was not uploaded.";
+    } else {
+        if (move_uploaded_file($_FILES["movieUpload"]["tmp_name"], $target_file)) {
+            $message = "The file ". htmlspecialchars( basename( $_FILES["movieUpload"]["name"])). " has been uploaded.";
+        } else {
+            $message = "Sorry, there was an error uploading your file.";
+        }
+    }
+
+    // Insert data into the database if upload is successful
+    if ($uploadOk == 1) {
+        $sql = "INSERT INTO movies (id, title, description, image_path, video_url) VALUES ('$id', '$title', '$description', '$target_file', '$video_url')";
+
+        if ($conn->query($sql) === TRUE) {
+            $message = "Record added successfully";
+        } else {
+            $message = "Error: " . $sql . "<br>" . $conn->error;
+        }
+    }
 }
 ?>
+
 
 
 <!DOCTYPE html>
@@ -68,6 +77,19 @@ if(isset($_POST['btnadd'])){
 <body>
 
 <div class="container">
+
+    <div class="message-container">
+        <?php
+        if (!empty($message)) {
+            if (strpos($message, "successfully") !== false) {
+                echo '<div class="success-message">' . $message . '</div>';
+            } else {
+                echo '<div class="error-message">' . $message . '</div>';
+            }
+        }
+        ?>
+    </div>
+
     <div class="formcontainer">
         <form method="POST" enctype="multipart/form-data" class="caro" action="admin_panel.php">
             <h2>Update Carousel</h2>      
@@ -124,6 +146,7 @@ if(isset($_POST['btnadd'])){
         </form>
     </div>
 </div>
+
 
 </body>
 
