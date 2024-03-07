@@ -102,6 +102,12 @@
     color: snow;
 }
 
+.navbar-nav li a {
+    color: snow;
+    text-decoration: none;
+}
+
+
 @media(min-width:991px){
     .nav-link::before{
         content: "";

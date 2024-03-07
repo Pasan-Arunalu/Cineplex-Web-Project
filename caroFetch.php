@@ -1,25 +1,25 @@
 <?php
-$sql1 = "SELECT title, description, image_path FROM movies WHERE id = 1";
-$sql2 = "SELECT title, description, image_path FROM movies WHERE id = 2";
-$sql3 = "SELECT title, description, image_path FROM movies WHERE id = 3";
-$sql4 = "SELECT title, description, image_path FROM movies WHERE id = 4";
-$sql5 = "SELECT title, description, image_path FROM movies WHERE id = 5";
-$sql6 = "SELECT title, description, image_path FROM movies WHERE id = 6";
-$sql7 = "SELECT title, description, image_path FROM movies WHERE id = 7";
-$sql8 = "SELECT title, description, image_path FROM movies WHERE id = 8";
-$sql9 = "SELECT title, description, image_path FROM movies WHERE id = 9";
-$sql10 = "SELECT title, description, image_path FROM movies WHERE id = 10";
-$sql11 = "SELECT title, description, image_path FROM movies WHERE id = 11";
-$sql12 = "SELECT title, description, image_path FROM movies WHERE id = 12";
-$sql13 = "SELECT title, description, image_path FROM movies WHERE id = 13";
-$sql14 = "SELECT title, description, image_path FROM movies WHERE id = 14";
-$sql15 = "SELECT title, description, image_path FROM movies WHERE id = 15";
-$sql16 = "SELECT title, description, image_path FROM movies WHERE id = 16";
-$sql17 = "SELECT title, description, image_path FROM movies WHERE id = 17";
-$sql18 = "SELECT title, description, image_path FROM movies WHERE id = 18";
-$sql19 = "SELECT title, description, image_path FROM movies WHERE id = 19";
-$sql20 = "SELECT title, description, image_path FROM movies WHERE id = 20";
-$sql21 = "SELECT title, description, image_path FROM movies WHERE id = 21";
+$sql1 = "SELECT title, description, image_path FROM movies WHERE movie_id = 1";
+$sql2 = "SELECT title, description, image_path FROM movies WHERE movie_id = 2";
+$sql3 = "SELECT title, description, image_path FROM movies WHERE movie_id = 3";
+$sql4 = "SELECT title, description, image_path FROM movies WHERE movie_id = 4";
+$sql5 = "SELECT title, description, image_path FROM movies WHERE movie_id = 5";
+$sql6 = "SELECT title, description, image_path FROM movies WHERE movie_id = 6";
+$sql7 = "SELECT title, description, image_path FROM movies WHERE movie_id = 7";
+$sql8 = "SELECT title, description, image_path FROM movies WHERE movie_id = 8";
+$sql9 = "SELECT title, description, image_path FROM movies WHERE movie_id = 9";
+$sql10 = "SELECT title, description, image_path FROM movies WHERE movie_id = 10";
+$sql11 = "SELECT title, description, image_path FROM movies WHERE movie_id = 11";
+$sql12 = "SELECT title, description, image_path FROM movies WHERE movie_id = 12";
+$sql13 = "SELECT title, description, image_path FROM movies WHERE movie_id = 13";
+$sql14 = "SELECT title, description, image_path FROM movies WHERE movie_id = 14";
+$sql15 = "SELECT title, description, image_path FROM movies WHERE movie_id = 15";
+$sql16 = "SELECT title, description, image_path FROM movies WHERE movie_id = 16";
+$sql17 = "SELECT title, description, image_path FROM movies WHERE movie_id = 17";
+$sql18 = "SELECT title, description, image_path FROM movies WHERE movie_id = 18";
+$sql19 = "SELECT title, description, image_path FROM movies WHERE movie_id = 19";
+$sql20 = "SELECT title, description, image_path FROM movies WHERE movie_id = 20";
+$sql21 = "SELECT title, description, image_path FROM movies WHERE movie_id = 21";
 
 
 $result1 = $conn->query($sql1);

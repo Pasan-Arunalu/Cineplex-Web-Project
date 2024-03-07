@@ -2,12 +2,44 @@
 include("connection.php");
 
 
+
+// Initialize an empty showtime dropdown variable
+$showtimeDropdown = '';
+
+// Fetch showtime data from the database
+$showtimeQuery = "SELECT showtime_id, start_time FROM showtime";
+$showtimeResult = $conn->query($showtimeQuery);
+
+// Initialize an empty array to store showtime options
+$showtimeOptions = array();
+
+// Check if there are rows in the result
+if ($showtimeResult->num_rows > 0) {
+    // Fetch and store showtime options in the array
+    while ($row = $showtimeResult->fetch_assoc()) {
+        $showtimeOptions[] = '<option value="' . $row['showtime_id'] . '">' . $row['start_time'] . '</option>';
+    }
+}
+
+// Dynamically generate the showtime dropdown options
+$showtimeDropdown = '<select name="showtime_id" id="showtime_id" class="select">
+                        <option value="" disabled selected>Showtime ID</option>'
+                        . implode('', $showtimeOptions) .
+                    '</select>';
+
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["btnadd"])) {
+    // ... (rest of your existing code)
+}
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["btnadd"])) {
     // Validate input
     $id = isset($_POST["id"]) ? intval($_POST["id"]) : 0;
     $title = isset($_POST["txtmovie"]) ? htmlspecialchars($_POST["txtmovie"]) : "";
     $description = isset($_POST["txtdes"]) ? htmlspecialchars($_POST["txtdes"]) : "";
     $video_url = isset($_POST["txturl"]) ? htmlspecialchars($_POST["txturl"]) : "";
+    $showtime_id = isset($_POST["showtime_id"]) ? intval($_POST["showtime_id"]) : 0;
 
     // Validate file upload
     $target_dir = "images/";
@@ -41,18 +73,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["btnadd"])) {
         $message = "Sorry, your file was not uploaded.";
     } else {
         if (move_uploaded_file($_FILES["movieUpload"]["tmp_name"], $target_file)) {
-            $message = "The file ". htmlspecialchars( basename( $_FILES["movieUpload"]["name"])). " has been uploaded.";
+            $message = "The file " . htmlspecialchars(basename($_FILES["movieUpload"]["name"])) . " has been uploaded.";
         } else {
             $message = "Sorry, there was an error uploading your file.";
         }
     }
 
-    // Insert data into the database if upload is successful
     if ($uploadOk == 1) {
-        $sql = "INSERT INTO movies (id, title, description, image_path, video_url) VALUES ('$id', '$title', '$description', '$target_file', '$video_url')";
+        // Check if the ID is provided for updating existing record
+        if (!empty($id)) {
+            $sql = "UPDATE movies SET title='$title', description='$description', image_path='$target_file', video_url='$video_url', showtime_id='$showtime_id' WHERE movie_id='$id'";
+        } else {
+            $sql = "INSERT INTO movies (title, description, image_path, video_url, showtime_id) VALUES ('$title', '$description', '$target_file', '$video_url', '$showtime_id')";
+        }
 
         if ($conn->query($sql) === TRUE) {
-            $message = "Record added successfully";
+            $message = "Record " . (!empty($id) ? "updated" : "added") . " successfully";
         } else {
             $message = "Error: " . $sql . "<br>" . $conn->error;
         }
@@ -70,7 +106,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["btnadd"])) {
     
     <link rel="stylesheet" href="css/adminPanelStyle.css">
 
-    <title>Document</title>
+    <title>Admin Panel</title>
 
 </head>
 
@@ -138,6 +174,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["btnadd"])) {
                 <tr>
                     <td><label>Movie Poster</label></td>
                     <td><input type="file" name="movieUpload"></td>
+                </tr>
+                <tr>
+                    <td><label for="id" class="label">Select Showtime ID</label></td>
+                    <td>
+                        <?php echo $showtimeDropdown; ?>
+                    </td>
                 </tr>
                 <tr>
                     <td colspan="2"><input type="submit" name="btnadd" value="Add" id="addbtn"></td>

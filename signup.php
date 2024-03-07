@@ -1,3 +1,36 @@
+<?php
+include("connection.php");
+
+if (isset($_POST["submit"])) {
+    $username = mysqli_real_escape_string($conn, $_POST["user"]);
+    $password = mysqli_real_escape_string($conn, $_POST["pass"]);
+    $passwordConfirm = mysqli_real_escape_string($conn, $_POST["pass_confirm"]);
+
+    // Perform additional validation if needed
+    if (empty($username) || empty($password) || empty($passwordConfirm)) {
+        $_SESSION["error"] = "Username, password, and password confirmation are required.";
+        exit();
+    }
+
+    // Check if the password and password confirmation match
+    if ($password !== $passwordConfirm) {
+        $_SESSION["error"] = "Password and password confirmation do not match.";
+        exit();
+    }
+
+    // Insert the user into the database
+    $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
+
+    if ($conn->query($sql) === TRUE) {
+        $_SESSION["success"] = "User registered successfully, <br>Please Login";
+    } else {
+        $_SESSION["error"] = "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
+
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,9 +49,19 @@
     ?>
 
     <div class="signupform">
+        <?php
+            // Display error message if set in the session
+            if (isset($_SESSION["error"])) {
+                echo "<p style='color: red;'>" . $_SESSION["error"] . "</p>";
+                unset($_SESSION["error"]); // Clear the error message
+            } else if (isset($_SESSION["success"])) {
+                echo "<p style='color: green;'>" . $_SESSION["success"] . "</p>";
+                unset($_SESSION["success"]); 
+            };
+        ?>
         <h1>Cineplex</h1>
         <h3>Sign Up</h3>
-        <form name="signupform" action="signup.php" onsubmit="return isvalid()" method="POST">
+        <form name="signupform" action="signup.php" method="POST">
             <div class="input-group">
                 <input type="text" id="un" name="user" placeholder="Enter Username" required>
             </div>

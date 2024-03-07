@@ -9,7 +9,7 @@ body {
 }
 
 #carouselautoplaying {
-    top: 80px;
+    top: 90px;
     width: 100%; /* Ensure the carousel takes the full width */
 }
 
@@ -47,6 +47,8 @@ body {
     height: 60px;
     width: 200px;
     margin: 15px;
+    padding: 15px;
+    text-decoration: none;
     background-color: #D4FF9D;
     color: #03131A;
     font-family: "League Spartan", sans-serif;
@@ -56,6 +58,7 @@ body {
     border: transparent;
     transition: 1s;
     text-align: center;
+    cursor: pointer;
 }
 
 .btnscontainer img{
@@ -198,6 +201,7 @@ body {
     transition: 1s;
     margin: 5px;
     border-radius: 10px;
+    text-decoration: none;
 }
 
 .crdbtn1:hover,
