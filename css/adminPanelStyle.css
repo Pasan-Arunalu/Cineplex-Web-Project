@@ -1,0 +1,51 @@
+body {
+    background-image: url(img/b0e63b94-e461-4f65-9183-e8941cb2fa6c.png);
+    background-size: cover;
+    display: flex;
+    justify-content: center; 
+    height: 100vh; 
+    margin: 0; 
+}
+
+.container {
+    background-color: rgba(3, 19, 26, 0.7);
+    width: 500px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.caro h2 {
+    color: #D4FF9D;
+    font-size: 30px;
+}
+
+.caro table {
+    color: snow;
+    font-size: 20px;
+}
+
+.label {
+    color: snow;
+    font-size: 20px;
+}
+
+.caro table tr {
+    height: 50px;
+}
+
+.select,
+.caro table td input {
+    height: 20px;
+    width: 200px;
+    margin: 20px;
+}
+
+#addbtn {
+    height: 40px;
+    width: 80px;
+    margin: 0;
+    cursor: pointer;
+}

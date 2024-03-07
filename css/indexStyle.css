@@ -13,6 +13,10 @@ body {
     width: 100%; /* Ensure the carousel takes the full width */
 }
 
+.carousel-item img {
+    height: 800px;
+}
+
 .carouselchild {
     display: flex;
     flex-direction: column; /* Arrange children vertically */
@@ -51,6 +55,7 @@ body {
     border-radius: 10px;
     border: transparent;
     transition: 1s;
+    text-align: center;
 }
 
 .btnscontainer img{
@@ -67,6 +72,10 @@ body {
     .carouselchild {
         /* Adjust the size of carousel child div for smaller screens */
         height: 40px;
+    }
+
+    .carousel-item img {
+        height: 300px;
     }
 
     .crslbtn1,
@@ -92,7 +101,7 @@ body {
 
 .nsuc{
     height: 80px;
-    width: 1100px;
+    width: 1200px;
     margin-left: 18.5%;
     background-color: rgba(3, 19, 26, 0.7);
     color: snow;
@@ -151,6 +160,7 @@ body {
 
 .col {
     height: 700px;
+    margin: 25px;
 }
 
 .card {
@@ -246,7 +256,7 @@ body {
 .searchinput {
     width: 300px;
     height: 40px;
-    border-radius: 10px;
+    border-radius: 5px;
     border: none;
     padding-right: 40px;
 }
@@ -275,19 +285,20 @@ body {
     background-color: #D4FF9D;
 } */
 
-.allmovies {
-    width: 120px;
-    height: 40px;
-    border-radius: 10px;
+.link-style-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #D4FF9D; 
+    color: #03131A; 
+    text-decoration: none;
     border: none;
-    background-color: #D4FF9D;
-    color: #03131A;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 1s ease;
     font-weight: 500;
-    font-size: 15px;
-    transition: 1s;
 }
 
-.allmovies:hover {
+.link-style-button:hover {
     transform: scale(1.1);
     transition: 1s;
 }
@@ -453,7 +464,7 @@ body {
     color: snow;
     margin-top: 40px;
     font-family: "League Spartan", sans-serif;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 
@@ -488,7 +499,7 @@ body {
     color: snow;
     margin-top: 40px;
     font-family: "League Spartan", sans-serif;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 

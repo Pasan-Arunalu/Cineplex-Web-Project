@@ -107,7 +107,7 @@ input {
 .signuplink::before {
     content: "";
     position: absolute;
-    bottom: 260px;
+    bottom: 300px;
     left: 50%;
     transform: translateX(-50%);
     width: 0;

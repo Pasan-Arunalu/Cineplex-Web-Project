@@ -1,3 +1,10 @@
+<?php
+include("connection.php");
+?>
+
+<?php
+include("caroFetch.php");
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +34,7 @@
         <div id="carouselautoplaying" class="carousel slide">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="img/h (1).jpg" class="d-block w-100" alt="...">
+                    <img src="<?php echo $img1; ?>" class="d-block w-100" alt="...">
                     <div class="carouselchild">
                         <div class="btnscontainer">
                             <button class="crslbtn1"><img src="img/svg/ticket-detailed.svg" alt="">   Buy Tickets</button>
@@ -36,7 +43,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="img/h (2).jpg" class="d-block w-100" alt="...">
+                    <img src="<?php echo $img2; ?>" class="d-block w-100" alt="...">
                     <div class="carouselchild">
                         <div class="btnscontainer">
                             <button class="crslbtn1"><img src="img/svg/ticket-detailed.svg" alt="">   Buy Tickets</button>
@@ -45,7 +52,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="img/h (4).jpg" class="d-block w-100" alt="...">
+                    <img src="<?php echo $img3; ?>" class="d-block w-100" alt="...">
                     <div class="carouselchild">
                         <div class="btnscontainer">
                             <button class="crslbtn1"><img src="img/svg/ticket-detailed.svg" alt="">   Buy Tickets</button>
@@ -54,7 +61,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="img/h (5).jpg" class="d-block w-100" alt="...">
+                    <img src="<?php echo $img4; ?>" class="d-block w-100" alt="...">
                     <div class="carouselchild">
                         <div class="btnscontainer">
                             <button class="crslbtn1"><img src="img/svg/ticket-detailed.svg" alt="">   Buy Tickets</button>
@@ -63,7 +70,16 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="img/h (6).jpg" class="d-block w-100" alt="...">
+                    <img src="<?php echo $img5; ?>" class="d-block w-100" alt="...">
+                    <div class="carouselchild">
+                        <div class="btnscontainer">
+                            <button class="crslbtn1"><img src="img/svg/ticket-detailed.svg" alt="">   Buy Tickets</button>
+                            <button class="crslbtn2"><img src="img/svg/play-btn.svg" alt="">   Watch Trailer</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="<?php echo $img6; ?>" class="d-block w-100" alt="...">
                     <div class="carouselchild">
                         <div class="btnscontainer">
                             <button class="crslbtn1"><img src="img/svg/ticket-detailed.svg" alt="">   Buy Tickets</button>
@@ -109,7 +125,7 @@
                     <div class="row">
                         <div class="col">
                             <div class="card">
-                                <img src="img/posters-now-showing/159114.jpg" class="card-img-top img-fluid" alt="...">
+                                <img src="<?php echo $img7; ?>" class="card-img-top img-fluid" alt="...">
                                 <div class="card-body">
                                     <div class="cardbtncontainer">
                                         <button class="crdbtn1"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button>
@@ -120,7 +136,7 @@
                         </div>
                         <div class="col">
                             <div class="card">
-                                <img src="img/posters-now-showing/159394.jpg" class="card-img-top img-fluid" alt="...">
+                                <img src="<?php echo $img8; ?>" class="card-img-top img-fluid" alt="...">
                                 <div class="card-body">
                                 <div class="cardbtncontainer">
                                         <button class="crdbtn1"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button>
@@ -131,7 +147,7 @@
                         </div>
                         <div class="col">
                             <div class="card">
-                                <img src="img/posters-now-showing/161007.jpg" class="card-img-top img-fluid" alt="...">
+                                <img src="<?php echo $img9; ?>" class="card-img-top img-fluid" alt="...">
                                 <div class="card-body">
                                 <div class="cardbtncontainer">
                                         <button class="crdbtn1"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button>
@@ -149,7 +165,7 @@
                     <div class="row">
                         <div class="col">
                             <div class="card">
-                                <img src="img/posters-now-showing/161038.jpg" class="card-img-top img-fluid" alt="...">
+                                <img src="<?php echo $img10; ?>" class="card-img-top img-fluid" alt="...">
                                 <div class="card-body">
                                 <div class="cardbtncontainer">
                                         <button class="crdbtn1"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button>
@@ -160,7 +176,7 @@
                         </div>
                         <div class="col">
                             <div class="card">
-                                <img src="img/posters-now-showing/161273.jpg" class="card-img-top img-fluid" alt="...">
+                                <img src="<?php echo $img11; ?>" class="card-img-top img-fluid" alt="...">
                                 <div class="card-body">
                                 <div class="cardbtncontainer">
                                         <button class="crdbtn1"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button>
@@ -171,7 +187,7 @@
                         </div>
                         <div class="col">
                             <div class="card">
-                                <img src="img/posters-now-showing/161485.jpg" class="card-img-top img-fluid" alt="...">
+                                <img src="<?php echo $img12; ?>" class="card-img-top img-fluid" alt="...">
                                 <div class="card-body">
                                 <div class="cardbtncontainer">
                                         <button class="crdbtn1"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button>
@@ -189,7 +205,7 @@
                     <div class="row">
                         <div class="col">
                             <div class="card">
-                                <img src="img/posters-now-showing/56489f60-395a-4066-977a-4dbaaab01ee9.jpg" class="card-img-top img-fluid" alt="...">
+                                <img src="<?php echo $img13; ?>" class="card-img-top img-fluid" alt="...">
                                 <div class="card-body">
                                 <div class="cardbtncontainer">
                                         <button class="crdbtn1"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button>
@@ -200,7 +216,7 @@
                         </div>
                         <div class="col">
                             <div class="card">
-                                <img src="img/posters-now-showing/b895a256-f386-4400-8d40-5430435c3e5c.jpg" class="card-img-top img-fluid" alt="...">
+                                <img src="<?php echo $img14; ?>" class="card-img-top img-fluid" alt="...">
                                 <div class="card-body">
                                 <div class="cardbtncontainer">
                                         <button class="crdbtn1"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button>
@@ -211,7 +227,7 @@
                         </div>
                         <div class="col">
                             <div class="card">
-                                <img src="img/posters-now-showing/f96f1cfd-d2ae-4950-8fcf-a071e757028e.jpg" class="card-img-top img-fluid" alt="...">
+                                <img src="<?php echo $img15; ?>" class="card-img-top img-fluid" alt="...">
                                 <div class="card-body">
                                 <div class="cardbtncontainer">
                                         <button class="crdbtn1"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button>
@@ -238,7 +254,7 @@
                                                 <a class="searchicon" href=""><img src="img/svg/search.svg" alt=""></a> 
                                                 <br> <br> 
                                                 <!-- <button class="searchbtn" type="submit">Search</button> <br> <br> -->
-                                                <button class="allmovies">All Movies</button>  
+                                                <a href="movies.php" class="link-style-button">All Movies</a>                               
                                             </div>
                                         </div>
                                     </form>
@@ -275,7 +291,7 @@
                     <div id="uccard-group" class="row">
                         <div class="col">
                             <div class="card">
-                                <img src="img/uc-posters/uc1.jpg" class="card-img-top img-fluid" alt="...">
+                                <img src="<?php echo $img16; ?>" class="card-img-top img-fluid" alt="...">
                                 <div class="card-body">
                                 <div class="cardbtncontainer">
                                         <button class="crdbtn1"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button>
@@ -286,7 +302,7 @@
                         </div>
                         <div class="col">
                             <div class="card">
-                                <img src="img/uc-posters/uc2.jpg" class="card-img-top img-fluid" alt="...">
+                                <img src="<?php echo $img17; ?>" class="card-img-top img-fluid" alt="...">
                                 <div class="card-body">
                                 <div class="cardbtncontainer">
                                         <button class="crdbtn1"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button>
@@ -297,7 +313,47 @@
                         </div>
                         <div class="col">
                             <div class="card">
-                                <img src="img/uc-posters/uc3.jpg" class="card-img-top img-fluid" alt="...">
+                                <img src="<?php echo $img18; ?>" class="card-img-top img-fluid" alt="...">
+                                <div class="card-body">
+                                <div class="cardbtncontainer">
+                                        <button class="crdbtn1"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button>
+                                        <button class="crdbtn2"><img src="img/svg/play-btn.svg" alt="" style="height:25px; width:25px; margin: 5px;">Watch Trailer</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--slide 2-->
+            <div class="carousel-item">
+                <div class="d-flex align-items-center justify-content-center h-100">
+                    <div id="uccard-group-1" class="row">
+                        <div class="col">
+                            <div class="card">
+                                <img src="<?php echo $img19; ?>" class="card-img-top img-fluid" alt="...">
+                                <div class="card-body">
+                                <div class="cardbtncontainer">
+                                        <button class="crdbtn1"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button>
+                                        <button class="crdbtn2"><img src="img/svg/play-btn.svg" alt="" style="height:25px; width:25px; margin: 5px;">Watch Trailer</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img src="<?php echo $img20; ?>" class="card-img-top img-fluid" alt="...">
+                                <div class="card-body">
+                                <div class="cardbtncontainer">
+                                        <button class="crdbtn1"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button>
+                                        <button class="crdbtn2"><img src="img/svg/play-btn.svg" alt="" style="height:25px; width:25px; margin: 5px;">Watch Trailer</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img src="<?php echo $img21; ?>" class="card-img-top img-fluid" alt="...">
                                 <div class="card-body">
                                 <div class="cardbtncontainer">
                                         <button class="crdbtn1"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button>
@@ -312,46 +368,6 @@
             <!--slide 3-->
             <div class="carousel-item">
                 <div class="d-flex align-items-center justify-content-center h-100">
-                    <div id="uccard-group-1" class="row">
-                        <div class="col">
-                            <div class="card">
-                                <img src="img/uc-posters/uc4.jpg" class="card-img-top img-fluid" alt="...">
-                                <div class="card-body">
-                                <div class="cardbtncontainer">
-                                        <button class="crdbtn1"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button>
-                                        <button class="crdbtn2"><img src="img/svg/play-btn.svg" alt="" style="height:25px; width:25px; margin: 5px;">Watch Trailer</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card">
-                                <img src="img/uc-posters/uc5.jpg" class="card-img-top img-fluid" alt="...">
-                                <div class="card-body">
-                                <div class="cardbtncontainer">
-                                        <button class="crdbtn1"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button>
-                                        <button class="crdbtn2"><img src="img/svg/play-btn.svg" alt="" style="height:25px; width:25px; margin: 5px;">Watch Trailer</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card">
-                                <img src="img/posters-now-showing/b895a256-f386-4400-8d40-5430435c3e5c.jpg" class="card-img-top img-fluid" alt="...">
-                                <div class="card-body">
-                                <div class="cardbtncontainer">
-                                        <button class="crdbtn1"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button>
-                                        <button class="crdbtn2"><img src="img/svg/play-btn.svg" alt="" style="height:25px; width:25px; margin: 5px;">Watch Trailer</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--slide 4-->
-            <div class="carousel-item">
-                <div class="d-flex align-items-center justify-content-center h-100">
                     <div class="row">
                         <div class="colsearch">
                             <div class="cardsearch">
@@ -364,7 +380,7 @@
                                                 <a class="searchicon" href=""><img src="img/svg/search.svg" alt=""></a> 
                                                 <br> <br> 
                                                 <!-- <button class="searchbtn" type="submit">Search</button> <br> <br> -->
-                                                <button class="allmovies">All Movies</button>  
+                                                <a href="movies.php" class="link-style-button">All Movies</a>
                                             </div>
                                         </div>
                                     </form>
@@ -438,7 +454,7 @@
                     <a class="fot-link " aria-current="page" href="#">Home</a>
                 </li> -->
                 <li class="fot-item">
-                    <a class="fot-link " href="#">Movies</a>
+                    <a class="fot-link " href="movies.php">Movies</a>
                 </li>
                 <li class="fot-item">
                     <a class="fot-link " href="#">Deals</a>
