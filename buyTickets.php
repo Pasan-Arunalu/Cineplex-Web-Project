@@ -119,7 +119,7 @@ echo "<script>selectedStartTime = '" . (isset($startTime) ? $startTime : '') . "
               </label>
             </div>
             <div class="times">
-              <input type="radio" name="time" id="t1" checked />
+              <input type="radio" name="time" id="t1"/>
               <label for="t1" class="time">10:30</label>
               <input type="radio" id="t2" name="time" />
               <label for="t2" class="time"> 13:00 </label>

@@ -1,8 +1,6 @@
 <?php
 include("connection.php");
 
-
-
 // Initialize an empty showtime dropdown variable
 $showtimeDropdown = '';
 
@@ -23,23 +21,42 @@ if ($showtimeResult->num_rows > 0) {
 
 // Dynamically generate the showtime dropdown options
 $showtimeDropdown = '<select name="showtime_id" id="showtime_id" class="select">
-                        <option value="" disabled selected>Showtime ID</option>'
+                        <option value="" disabled selected>Showtime </option>'
                         . implode('', $showtimeOptions) .
                     '</select>';
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["btnadd"])) {
-    // ... (rest of your existing code)
 }
 
+//theatre drop down
+$theaterDropdown = '';
+$theaterQuery = "SELECT theater_id, theater_name FROM theater";
+$theaterResult = $conn->query($theaterQuery);
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["btnadd"])) {
-    // Validate input
-    $id = isset($_POST["id"]) ? intval($_POST["id"]) : 0;
-    $title = isset($_POST["txtmovie"]) ? htmlspecialchars($_POST["txtmovie"]) : "";
-    $description = isset($_POST["txtdes"]) ? htmlspecialchars($_POST["txtdes"]) : "";
-    $video_url = isset($_POST["txturl"]) ? htmlspecialchars($_POST["txturl"]) : "";
-    $showtime_id = isset($_POST["showtime_id"]) ? intval($_POST["showtime_id"]) : 0;
+$theaterOptions = array();
+
+if ($theaterResult->num_rows > 0) {
+    while ($row = $theaterResult->fetch_assoc()) {
+        $theaterOptions[] = '<option value="' . $row['theater_id'] . '">' . $row['theater_name'] .'</option>';
+
+    }
+}
+
+$theaterDropdown = '<select name="theater_id" id="theater_id" class="select">
+                        <option value="" disabled selected>Theater </option>'
+                        . implode('', $theaterOptions) .
+                    '</select>';
+
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["btnadd"])) {
+        // Validate input
+        $id = isset($_POST["id"]) ? intval($_POST["id"]) : null;
+        $title = isset($_POST["txtmovie"]) ? htmlspecialchars($_POST["txtmovie"]) : "";
+        $description = isset($_POST["txtdes"]) ? htmlspecialchars($_POST["txtdes"]) : "";
+        $video_url = isset($_POST["txturl"]) ? htmlspecialchars($_POST["txturl"]) : "";
+        $showtime_id = isset($_POST["showtime_id"]) ? intval($_POST["showtime_id"]) : null;
+        $theater_id = isset($_POST["theater_id"]) ? intval($_POST["theater_id"]) : null;
 
     // Validate file upload
     $target_dir = "images/";
@@ -80,11 +97,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["btnadd"])) {
     }
 
     if ($uploadOk == 1) {
-        // Check if the ID is provided for updating existing record
+        // Check if the ID is provided for updating an existing record
         if (!empty($id)) {
-            $sql = "UPDATE movies SET title='$title', description='$description', image_path='$target_file', video_url='$video_url', showtime_id='$showtime_id' WHERE movie_id='$id'";
+            $sql = "UPDATE movies SET title='$title', description='$description', image_path='$target_file', video_url='$video_url', showtime_id=".($showtime_id !== null ? $showtime_id : 'NULL').", theater_id=".($theater_id !== null ? $theater_id : 'NULL')." WHERE movie_id='$id'";
         } else {
-            $sql = "INSERT INTO movies (title, description, image_path, video_url, showtime_id) VALUES ('$title', '$description', '$target_file', '$video_url', '$showtime_id')";
+            $sql = "INSERT INTO movies (title, description, image_path, video_url, showtime_id, theater_id) VALUES ('$title', '$description', '$target_file', '$video_url', ".($showtime_id !== null ? $showtime_id : 'NULL').", ".($theater_id !== null ? $theater_id : 'NULL').")";
         }
 
         if ($conn->query($sql) === TRUE) {
@@ -92,7 +109,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["btnadd"])) {
         } else {
             $message = "Error: " . $sql . "<br>" . $conn->error;
         }
+    } else {
+        $message = "File upload error or invalid file.";
     }
+    
 }
 ?>
 
@@ -176,7 +196,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["btnadd"])) {
                     <td><input type="file" name="movieUpload"></td>
                 </tr>
                 <tr>
-                    <td><label for="id" class="label">Select Showtime ID</label></td>
+                    <td><label for="id" class="label">Select Theatre</label></td>
+                    <td>
+                        <?php echo $theaterDropdown; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="id" class="label">Select Showtime</label></td>
                     <td>
                         <?php echo $showtimeDropdown; ?>
                     </td>
