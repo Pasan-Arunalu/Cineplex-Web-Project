@@ -38,7 +38,9 @@ include("caroFetch.php");
                     <img src="<?php echo $img1; ?>" class="d-block w-100" alt="...">
                     <div class="carouselchild">
                         <div class="btnscontainer">
-                            <a class="crslbtn1" href="buyTickets.php?movie=<?php echo urlencode($movie_title); ?>"><img src="img/svg/ticket-detailed.svg" alt="">   Buy Tickets</a>
+                            <a class="crslbtn1" href="<?php echo isset($_SESSION['username']) ? 'buyTickets.php?title=' . urlencode($title1) : 'login.php'; ?>">
+                            <img src="img/svg/ticket-detailed.svg" alt=""> Buy Tickets
+                            </a>
                             <a class="crslbtn2"><img src="img/svg/play-btn.svg" alt="">   Watch Trailer</a>
                         </div>
                     </div>
@@ -47,7 +49,9 @@ include("caroFetch.php");
                     <img src="<?php echo $img2; ?>" class="d-block w-100" alt="...">
                     <div class="carouselchild">
                         <div class="btnscontainer">
-                            <a class="crslbtn1" href="javascript:redirectToBuyTickets()"><img src="img/svg/ticket-detailed.svg" alt="">   Buy Tickets</a>
+                            <a class="crslbtn1" href="<?php echo isset($_SESSION['username']) ? 'buyTickets.php?title=' . urlencode($title2) : 'login.php'; ?>">
+                            <img src="img/svg/ticket-detailed.svg" alt=""> Buy Tickets
+                            </a>
                             <a class="crslbtn2"><img src="img/svg/play-btn.svg" alt="">   Watch Trailer</a>
                         </div>
                     </div>
@@ -56,7 +60,9 @@ include("caroFetch.php");
                     <img src="<?php echo $img3; ?>" class="d-block w-100" alt="...">
                     <div class="carouselchild">
                         <div class="btnscontainer">
-                            <a class="crslbtn1" href="javascript:redirectToBuyTickets()"><img src="img/svg/ticket-detailed.svg" alt="">   Buy Tickets</a>
+                            <a class="crslbtn1" href="<?php echo isset($_SESSION['username']) ? 'buyTickets.php?title=' . urlencode($title3) : 'login.php'; ?>">
+                            <img src="img/svg/ticket-detailed.svg" alt=""> Buy Tickets
+                            </a>
                             <a class="crslbtn2"><img src="img/svg/play-btn.svg" alt="">   Watch Trailer</a>
                         </div>
                     </div>
@@ -65,7 +71,9 @@ include("caroFetch.php");
                     <img src="<?php echo $img4; ?>" class="d-block w-100" alt="...">
                     <div class="carouselchild">
                         <div class="btnscontainer">
-                            <a class="crslbtn1" href="javascript:redirectToBuyTickets()"><img src="img/svg/ticket-detailed.svg" alt="">   Buy Tickets</a>
+                            <a class="crslbtn1" href="<?php echo isset($_SESSION['username']) ? 'buyTickets.php?title=' . urlencode($title4) : 'login.php'; ?>">
+                            <img src="img/svg/ticket-detailed.svg" alt=""> Buy Tickets
+                            </a>
                             <a class="crslbtn2"><img src="img/svg/play-btn.svg" alt="">   Watch Trailer</a>
                         </div>
                     </div>
@@ -74,7 +82,9 @@ include("caroFetch.php");
                     <img src="<?php echo $img5; ?>" class="d-block w-100" alt="...">
                     <div class="carouselchild">
                         <div class="btnscontainer">
-                            <a class="crslbtn1" href="javascript:redirectToBuyTickets()"><img src="img/svg/ticket-detailed.svg" alt="">   Buy Tickets</a>
+                            <a class="crslbtn1" href="<?php echo isset($_SESSION['username']) ? 'buyTickets.php?title=' . urlencode($title5) : 'login.php'; ?>">
+                            <img src="img/svg/ticket-detailed.svg" alt=""> Buy Tickets
+                            </a>
                             <a class="crslbtn2"><img src="img/svg/play-btn.svg" alt="">   Watch Trailer</a>
                         </div>
                     </div>
@@ -83,7 +93,9 @@ include("caroFetch.php");
                     <img src="<?php echo $img6; ?>" class="d-block w-100" alt="...">
                     <div class="carouselchild">
                         <div class="btnscontainer">
-                            <a class="crslbtn1" href="javascript:redirectToBuyTickets()"><img src="img/svg/ticket-detailed.svg" alt="">   Buy Tickets</a>
+                            <a class="crslbtn1" href="<?php echo isset($_SESSION['username']) ? 'buyTickets.php?title=' . urlencode($title6) : 'login.php'; ?>">
+                            <img src="img/svg/ticket-detailed.svg" alt=""> Buy Tickets
+                            </a>
                             <a class="crslbtn2"><img src="img/svg/play-btn.svg" alt="">   Watch Trailer</a>
                         </div>
                     </div>
@@ -129,7 +141,7 @@ include("caroFetch.php");
                                 <img src="<?php echo $img7; ?>" class="card-img-top img-fluid" alt="...">
                                 <div class="card-body">
                                     <div class="cardbtncontainer">
-                                        <a class="crdbtn1" href="javascript:redirectToBuyTickets()"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</a>
+                                        <a class="crdbtn1" href="<?php echo isset($_SESSION['username']) ? 'buyTickets.php?title=' . urlencode($title7) : 'login.php'; ?>"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</a>
                                         <a class="crdbtn2"><img src="img/svg/play-btn.svg" alt="" style="height:25px; width:25px; margin: 5px;">Watch Trailer</a>
                                     </div>
                                 </div>
@@ -140,7 +152,7 @@ include("caroFetch.php");
                                 <img src="<?php echo $img8; ?>" class="card-img-top img-fluid" alt="...">
                                 <div class="card-body">
                                     <div class="cardbtncontainer">
-                                        <a class="crdbtn1" href="javascript:redirectToBuyTickets()"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</a>
+                                        <a class="crdbtn1" href="<?php echo isset($_SESSION['username']) ? 'buyTickets.php?title=' . urlencode($title8) : 'login.php'; ?>"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</a>
                                         <a class="crdbtn2"><img src="img/svg/play-btn.svg" alt="" style="height:25px; width:25px; margin: 5px;">Watch Trailer</a>
                                     </div>
                                 </div>
@@ -151,7 +163,7 @@ include("caroFetch.php");
                                 <img src="<?php echo $img9; ?>" class="card-img-top img-fluid" alt="...">
                                 <div class="card-body">
                                     <div class="cardbtncontainer">
-                                        <a class="crdbtn1" href="javascript:redirectToBuyTickets()"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</a>
+                                        <a class="crdbtn1" href="<?php echo isset($_SESSION['username']) ? 'buyTickets.php?title=' . urlencode($title9) : 'login.php'; ?>"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</a>
                                         <a class="crdbtn2"><img src="img/svg/play-btn.svg" alt="" style="height:25px; width:25px; margin: 5px;">Watch Trailer</a>
                                     </div>
                                 </div>
@@ -169,7 +181,7 @@ include("caroFetch.php");
                                 <img src="<?php echo $img10; ?>" class="card-img-top img-fluid" alt="...">
                                 <div class="card-body">
                                     <div class="cardbtncontainer">
-                                        <a class="crdbtn1" href="javascript:redirectToBuyTickets()"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</a>
+                                        <a class="crdbtn1" href="<?php echo isset($_SESSION['username']) ? 'buyTickets.php?title=' . urlencode($title10) : 'login.php'; ?>"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</a>
                                         <a class="crdbtn2"><img src="img/svg/play-btn.svg" alt="" style="height:25px; width:25px; margin: 5px;">Watch Trailer</a>>
                                     </div>
                                 </div>
@@ -180,7 +192,7 @@ include("caroFetch.php");
                                 <img src="<?php echo $img11; ?>" class="card-img-top img-fluid" alt="...">
                                 <div class="card-body">
                                     <div class="cardbtncontainer">
-                                        <a class="crdbtn1" href="javascript:redirectToBuyTickets()"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</a>
+                                        <a class="crdbtn1" href="<?php echo isset($_SESSION['username']) ? 'buyTickets.php?title=' . urlencode($title11) : 'login.php'; ?>"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</a>
                                         <a class="crdbtn2"><img src="img/svg/play-btn.svg" alt="" style="height:25px; width:25px; margin: 5px;">Watch Trailer</a>
                                     </div>
                                 </div>
@@ -191,7 +203,7 @@ include("caroFetch.php");
                                 <img src="<?php echo $img12; ?>" class="card-img-top img-fluid" alt="...">
                                 <div class="card-body">
                                     <div class="cardbtncontainer">
-                                        <a class="crdbtn1" href="javascript:redirectToBuyTickets()"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</a>
+                                        <a class="crdbtn1" href="<?php echo isset($_SESSION['username']) ? 'buyTickets.php?title=' . urlencode($title12) : 'login.php'; ?>"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</a>
                                         <a class="crdbtn2"><img src="img/svg/play-btn.svg" alt="" style="height:25px; width:25px; margin: 5px;">Watch Trailer</a>
                                     </div>
                                 </div>
@@ -209,7 +221,7 @@ include("caroFetch.php");
                                 <img src="<?php echo $img13; ?>" class="card-img-top img-fluid" alt="...">
                                 <div class="card-body">
                                     <div class="cardbtncontainer">
-                                        <a class="crdbtn1" href="javascript:redirectToBuyTickets()"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</a>
+                                        <a class="crdbtn1" href="<?php echo isset($_SESSION['username']) ? 'buyTickets.php?title=' . urlencode($title13) : 'login.php'; ?>"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</a>
                                         <a class="crdbtn2"><img src="img/svg/play-btn.svg" alt="" style="height:25px; width:25px; margin: 5px;">Watch Trailer</a>
                                     </div>
                                 </div>
@@ -220,7 +232,7 @@ include("caroFetch.php");
                                 <img src="<?php echo $img14; ?>" class="card-img-top img-fluid" alt="...">
                                 <div class="card-body">
                                     <div class="cardbtncontainer">
-                                        <a class="crdbtn1" href="javascript:redirectToBuyTickets()"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</a>
+                                        <a class="crdbtn1" href="<?php echo isset($_SESSION['username']) ? 'buyTickets.php?title=' . urlencode($title14) : 'login.php'; ?>"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</a>
                                         <a class="crdbtn2"><img src="img/svg/play-btn.svg" alt="" style="height:25px; width:25px; margin: 5px;">Watch Trailer</a>
                                     </div>
                                 </div>
@@ -231,7 +243,7 @@ include("caroFetch.php");
                                 <img src="<?php echo $img15; ?>" class="card-img-top img-fluid" alt="...">
                                 <div class="card-body">
                                     <div class="cardbtncontainer">
-                                        <a class="crdbtn1" href="javascript:redirectToBuyTickets()"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</a>
+                                        <a class="crdbtn1" href="<?php echo isset($_SESSION['username']) ? 'buyTickets.php?title=' . urlencode($title15) : 'login.php'; ?>"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</a>
                                         <a class="crdbtn2"><img src="img/svg/play-btn.svg" alt="" style="height:25px; width:25px; margin: 5px;">Watch Trailer</a>
                                     </div>
                                 </div>

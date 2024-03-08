@@ -206,3 +206,7 @@ input {
   cursor: pointer;
 }
 
+.disabled-time {
+    opacity: 0.5; /* Adjust the opacity to visually indicate disabled time slots */
+    pointer-events: none; /* Prevent interactions with disabled time slots */
+  }

@@ -2,21 +2,48 @@
 // Start or resume the session
 session_start();
 
+
 // Check if the user is not logged in, redirect to the login page
 if (isset($_SESSION['username'])) {
-
     $user_id = $_SESSION['username'];
-    echo "User ID: $user_id";
+    // echo "User ID: $user_id";
 } else {
-
     header("Location: login.php");
     exit();
 }
 
 include("connection.php");
-
 include("caroFetch.php");
+
+
+// Check if the title parameter is set in the URL
+if (isset($_GET['title'])) {
+    $movieTitle = urldecode($_GET['title']);
+
+    // Get showtime information for the specific movie
+    $showtimeInfo = getStartTimesForMovie($movieTitle);
+
+    if ($showtimeInfo && isset($showtimeInfo['start_time'])) {
+        $showtimeId = $showtimeInfo['showtime_id'];
+        $startTime = $showtimeInfo['start_time'];
+    } else {
+        // Output more information about the issue
+        $errorMessage = $showtimeInfo ? "start_time not found" : "Showtime information not found";
+        echo "$errorMessage for movie: $movieTitle";
+        // You can redirect the user or display an error message as needed
+        exit();
+    }
+} else {
+    // Handle the case when the title parameter is not set
+    echo "Movie title not provided in the URL";
+    // You can redirect the user or display an error message as needed
+    exit();
+}
+echo "<script>selectedStartTime = '" . (isset($startTime) ? $startTime : '') . "';</script>";
 ?>
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,11 +59,15 @@ include("caroFetch.php");
 
 <body>  
 
+    <?php
+        include("navbar.php");
+    ?>
+
     <div class="center">
       <div class="tickets">
         <div class="ticket-selector">
-          <div class="head">
-            <div class="title">Movie Name</div>
+        <div class="head">
+            <div class="title"><?php echo htmlspecialchars($movieTitle); ?></div>
           </div>
           <div class="seats">
             <div class="status">
@@ -112,39 +143,77 @@ include("caroFetch.php");
     </div>
     
     <script>
-  let seats = document.querySelector(".all-seats");
-  for (var i = 0; i < 27; i++) {
-    let randint = Math.floor(Math.random() * 2);
-    let booked = randint === 1 ? "booked" : "";
-    let seatNumber = i + 2; // Seat numbers start from 2
-    seats.insertAdjacentHTML(
-      "beforeend",
-      `<input type="checkbox" name="tickets" id="s${seatNumber}" />
-       <label for="s${seatNumber}" class="seat ${booked}">${seatNumber}</label>`
-    );
-  }
+    document.addEventListener("DOMContentLoaded", function () {
+        let selectedStartTime = "<?php echo isset($startTime) ? substr($startTime, 0, 5) : ''; ?>";
+        console.log('Selected Start Time:', selectedStartTime);
 
-  let tickets = seats.querySelectorAll("input");
-  tickets.forEach((ticket) => {
-    ticket.addEventListener("change", () => {
-      let amount = document.querySelector(".amount").innerHTML;
-      let count = document.querySelector(".count").innerHTML;
-      amount = Number(amount);
-      count = Number(count);
+        let seats = document.querySelector(".all-seats");
+        let amountElement = document.querySelector(".amount");
+        let countElement = document.querySelector(".count");
+        let movieTimes = document.querySelectorAll(".time");
+        console.log('Movie Times:', movieTimes);
 
-      if (ticket.checked) {
-        count += 1;
-        amount += 200;
-      } else {
-        count -= 1;
-        amount -= 200;
-      }
-      document.querySelector(".amount").innerHTML = amount;
-      document.querySelector(".count").innerHTML = count;
+        for (let time of movieTimes) {
+        let startTime = time.textContent.trim();
+
+        if (startTime !== selectedStartTime) {
+            time.classList.add("disabled-time");
+        }
+    }
+
+        for (let i = 2; i <= 28; i++) {
+            let randint = Math.floor(Math.random() * 2);
+            let booked = randint === 1 ? "booked" : "";
+            seats.insertAdjacentHTML(
+                "beforeend",
+                `<input type="checkbox" name="tickets" id="s${i}" />
+                 <label for="s${i}" class="seat ${booked}">${i}</label>`
+            );
+        }
+
+        let tickets = seats.querySelectorAll("input");
+        tickets.forEach((ticket) => {
+            ticket.addEventListener("change", updateAmount);
+        });
+
+        movieTimes.forEach((time) => {
+            let startTime = time.textContent.trim().substring(0, 5);
+            let isDisabled = startTime !== selectedStartTime;
+
+            console.log('Start Time:', startTime, 'Disabled:', isDisabled);
+
+            time.disabled = isDisabled;
+        });
+
+        function updateAmount() {
+            let amount = 1000 * [...tickets].filter((ticket) => ticket.checked).length;
+            let count = [...tickets].filter((ticket) => ticket.checked).length;
+
+            amountElement.textContent = amount;
+            countElement.textContent = count;
+        }
     });
-  });
 </script>
 
+<script>
+    // Assume PHP time format is HH:MM:SS, adjust as needed
+    selectedStartTime = "<?php echo isset($startTime) ? substr($startTime, 0, 5) : ''; ?>";
+
+    let times = document.querySelectorAll(".time");
+    times.forEach((time) => {
+        let startTime = time.textContent.trim();
+
+        // Compare selected start time with available times
+        if (startTime !== selectedStartTime) {
+            time.disabled = true;
+        }
+    });
+</script>
+
+<script>
+    console.log('JavaScript selectedStartTime: ' + JSON.stringify(selectedStartTime));
+    // ... (rest of the JavaScript code)
+</script>
 
 </body>
 
