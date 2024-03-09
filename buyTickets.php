@@ -2,24 +2,7 @@
 session_start();
 include("connection.php");
 include("caroFetch.php");
-include("processBooking.php");
-?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/buyTicketsStyle.css">
-    <title>Movie Ticket Booking</title>
-</head>
-<body>
-
-<?php
-    include("navbar.php");
-?>
-
-<?php
 // Fetch movie title and showtime_id from URL parameters
 $title = isset($_GET['title']) ? urldecode($_GET['title']) : 'Unknown Movie';
 $selectedShowtimeId = isset($_GET['showtime']) ? intval($_GET['showtime']) : 0;
@@ -59,15 +42,32 @@ if ($resultAllShowtimes && mysqli_num_rows($resultAllShowtimes) > 0) {
 
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/buyTicketsStyle.css">
+    <title>Movie Ticket Booking</title>
+
+
+</head>
+
+<body>
+
+<?php
+    include("navbar.php");
+?>
+
 <div id="titlecontainer">
     <h1 class="title"><?php echo $title; ?></h1>
     <h5 class="title2">Book Your Tickets</h5>
 </div>
 
-<form action="processBooking.php" method="post" class="ticketsForm">
+<form class="ticketsForm" action="processBooking.php" method="post">
     <div id="seat-map-container">
         <div id="seat-map">
-            <!-- Seats will be dynamically generated here -->
+            <input type="hidden" name="seats" id="selectedSeatsInput" value="">
         </div>
         <div id="screen">screen</div>
     </div>
@@ -91,9 +91,6 @@ if ($resultAllShowtimes && mysqli_num_rows($resultAllShowtimes) > 0) {
         <button type="submit" class="btnbook">Book Tickets</button>
     </div>
 </form>
-
-
-
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -123,31 +120,22 @@ if ($resultAllShowtimes && mysqli_num_rows($resultAllShowtimes) > 0) {
             }
         }
 
-        // Add click event listeners to showtime buttons
-        showtimeButtons.forEach(button => {
-            button.addEventListener('click', function () {
-                selectShowtime(this);
-                updateSelectedSeats();
-            });
+        function updateSelectedSeats() {
+        selectedSeats.clear();
+        const selectedSeatElements = document.querySelectorAll('.seat.selected');
+        selectedSeatElements.forEach(seat => {
+        selectedSeats.add(seat.dataset.seat);
         });
 
-        function selectShowtime(button) {
-            showtimeButtons.forEach(btn => btn.classList.remove('selected'));
-            button.classList.add('selected');
-            selectedShowtime = button.value;
-            updateBookButtonState();
-        }
+    // Update the value of the hidden input field
+    document.getElementById('selectedSeatsInput').value = Array.from(selectedSeats).join(',');
+    updateBookButtonState();
+}
 
-        function updateSelectedSeats() {
-            selectedSeats.clear();
-            const selectedSeatElements = document.querySelectorAll('.seat.selected');
-            selectedSeatElements.forEach(seat => selectedSeats.add(seat.dataset.seat));
-            updateBookButtonState();
-        }
 
         function updateBookButtonState() {
             const bookButton = document.querySelector('.btnbook');
-            bookButton.disabled = selectedSeats.size === 0 || selectedShowtime === null;
+            bookButton.disabled = selectedSeats.size === 0 || selectedDate === null;
         }
 
         function validateForm() {
@@ -163,6 +151,5 @@ if ($resultAllShowtimes && mysqli_num_rows($resultAllShowtimes) > 0) {
         }
     });
 </script>
-<script src="script.js"></script>
 </body>
 </html>

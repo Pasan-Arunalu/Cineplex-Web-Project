@@ -18,15 +18,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // SQL query using prepared statement to check if the user exists in the database
     $stmt = $conn->prepare("SELECT * FROM users WHERE username=? AND password=?");
-    $stmt->bind_param("ss", $username, $password); // Note: No password hashing for demonstration purposes
+    $stmt->bind_param("ss", $username, $password); 
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows == 1) {
         // Successful login
+        // Fetch the user ID from the database
+        $user_data = $result->fetch_assoc();
+        $user_id = $user_data['user_id']; // Adjust the key based on your database structure
+    
         // Set session variables
+        $_SESSION["user_id"] = $user_id;
         $_SESSION["username"] = $username;
-
+    
         // Redirect to a secure page or perform additional actions
         header("Location: index.php");
         exit();

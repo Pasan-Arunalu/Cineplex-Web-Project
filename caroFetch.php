@@ -1,41 +1,5 @@
 <?php
 
-if (!function_exists('getStartTimesForMovie')) {
-function getStartTimesForMovie($movieTitle) {
-    include("connection.php");
-
-    // Sanitize the input to prevent SQL injection
-    $movieTitle = mysqli_real_escape_string($conn, $movieTitle);
-
-    // Fetch showtime information for the given movie title
-    $query = "SELECT showtime.showtime_id, showtime.start_time FROM showtime
-              INNER JOIN movies ON showtime.showtime_id = movies.showtime_id
-              WHERE movies.title = '$movieTitle'";
-
-    $result = mysqli_query($conn, $query);
-
-    if ($result) {
-        $showtimeInfo = mysqli_fetch_assoc($result);
-
-        if ($showtimeInfo) {
-            return $showtimeInfo;
-        } else {
-            // Output more information about the issue
-            echo "Showtime information not found for movie: $movieTitle";
-            echo "Query: $query";
-            return null;
-        }
-    } else {
-        // Handle the query error as needed
-        echo "Query error: " . mysqli_error($conn);
-        return null;
-    }
-}
-}
-
-
-
-
 
 $sql1 = "SELECT movie_id, title, description, image_path, showtime_id FROM movies WHERE movie_id = 1";
 $sql2 = "SELECT movie_id, title, description, image_path, showtime_id FROM movies WHERE movie_id = 2";
