@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(img/b0e63b94-e461-4f65-9183-e8941cb2fa6c.png);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+.wrapper {
+    text-align: center;
+    margin: 100px auto; /* Center-align the wrapper */
+    background-color: rgba(3, 19, 26, 0.7); 
+    width: 800px;
+}
+
+section {
+    max-width: 800px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center-align the content within the section */
+}
+
+.wrapper h2, .wrapper h3 {
+    color: #fff;
+    text-align: center; /* Center-align the h2 and h3 */
+    margin-top: 20px; /* Adjusted margin */
+}
+
+table {
+    width: 600px; /* Adjusted width */
+    border-collapse: collapse;
+    margin: 50px auto; /* Center-align the table */
+}
+
+th, td {
+    padding: 10px;
+    text-align: center; /* Center-align text in cells */
+    border-bottom: 1px solid #fff;
+}
+
+th {
+    background-color: #333;
+    color: #fff;
+}
+
+td{
+    color: #fff;
+}

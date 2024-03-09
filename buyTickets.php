@@ -1,44 +1,9 @@
 <?php
 session_start();
 include("connection.php");
-include("caroFetch.php");
 
 // Fetch movie title and showtime_id from URL parameters
 $title = isset($_GET['title']) ? urldecode($_GET['title']) : 'Unknown Movie';
-$selectedShowtimeId = isset($_GET['showtime']) ? intval($_GET['showtime']) : 0;
-
-$movieId = isset($_GET['movie_id']) ? intval($_GET['movie_id']) : 0;
-
-// Fetch all showtimes for the movie
-$queryAllShowtimes = "SELECT showtime_id, start_time 
-                      FROM showtime
-                      WHERE showtime_id IN (SELECT showtime_id FROM movies WHERE movie_id = $movieId)";
-$resultAllShowtimes = mysqli_query($conn, $queryAllShowtimes);
-
-// Check if showtimes are available
-$showtimes = [];
-if ($resultAllShowtimes && mysqli_num_rows($resultAllShowtimes) > 0) {
-    while ($rowAllShowtimes = mysqli_fetch_assoc($resultAllShowtimes)) {
-        $showtimes[] = $rowAllShowtimes;
-    }
-}
-
-
-// Fetch all showtimes for the movie
-$queryAllShowtimes = "SELECT showtime.showtime_id, showtime.start_time 
-                      FROM showtime
-                      WHERE showtime.showtime_id IN (SELECT showtime_id FROM movies WHERE movie_id = $movieId)";
-$resultAllShowtimes = mysqli_query($conn, $queryAllShowtimes);
-
-// Check if showtimes are available
-$showtimes = [];
-if ($resultAllShowtimes && mysqli_num_rows($resultAllShowtimes) > 0) {
-    while ($rowAllShowtimes = mysqli_fetch_assoc($resultAllShowtimes)) {
-        $showtimes[] = $rowAllShowtimes;
-    }
-} else {
-    echo "No showtimes found for the selected movie.";
-}
 
 ?>
 
@@ -49,8 +14,6 @@ if ($resultAllShowtimes && mysqli_num_rows($resultAllShowtimes) > 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/buyTicketsStyle.css">
     <title>Movie Ticket Booking</title>
-
-
 </head>
 
 <body>
@@ -64,7 +27,8 @@ if ($resultAllShowtimes && mysqli_num_rows($resultAllShowtimes) > 0) {
     <h5 class="title2">Book Your Tickets</h5>
 </div>
 
-<form class="ticketsForm" action="processBooking.php" method="post">
+<form class="ticketsForm" action="processBooking.php" method="post" onsubmit="return validateForm();">
+
     <div id="seat-map-container">
         <div id="seat-map">
             <input type="hidden" name="seats" id="selectedSeatsInput" value="">
@@ -79,77 +43,97 @@ if ($resultAllShowtimes && mysqli_num_rows($resultAllShowtimes) > 0) {
         </div>
 
         <div class="showtime-display">
-            <?php foreach ($showtimes as $showtime) : ?>
-                <span class="showtime-display-item">
-                    Showtime : <?php echo $showtime['start_time'];  ?> 
-                </span>
-            <?php endforeach; ?>
+            <label>Select Showtime:</label>
+            <!-- Add your predefined showtimes as buttons here -->
+            <button type="button" class="showtime-button" data-showtime-id="1">10:00 AM</button>
+            <button type="button" class="showtime-button" data-showtime-id="2">2:00 PM</button>
+            <button type="button" class="showtime-button" data-showtime-id="3">5:00 PM</button>
+            <button type="button" class="showtime-button" data-showtime-id="4">8:00 PM</button>
         </div>
-    </div>
 
-    <div class="form-controls">
-        <button type="submit" class="btnbook">Book Tickets</button>
-    </div>
-</form>
+        <div class="form-controls">
+            <button type="submit" class="btnbook">Book Tickets</button>
+        </div>
+    </form>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const seatMap = document.getElementById('seat-map');
-        const showtimeButtons = document.querySelectorAll('.showtime-button');
-        const selectedSeats = new Set();
-        let selectedShowtime = null;
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const seatMap = document.getElementById('seat-map');
+            const showtimeButtons = document.querySelectorAll('.showtime-button');
+            const selectedSeats = new Set();
 
-        // Define the number of rows and columns
-        const rows = 5;
-        const cols = 6;
+            showtimeButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    showtimeButtons.forEach(btn => btn.classList.remove('selected'));
+                    this.classList.add('selected');
+                    document.getElementById('selectedShowtimeInput').value = this.dataset.showtimeId;
+                    updateBookButtonState();
+                });
+            });
 
-        // Generate seats dynamically
-        for (let row = 1; row <= rows; row++) {
-            for (let col = 1; col <= cols; col++) {
-                const seat = document.createElement('div');
-                seat.className = 'seat';
-                seat.dataset.seat = `${String.fromCharCode(64 + row)}${col}`;
-                seat.textContent = seat.dataset.seat;
+            // Define the number of rows and columns
+            const rows = 5;
+            const cols = 6;
 
-                seat.addEventListener('click', function () {
-                    this.classList.toggle('selected');
-                    updateSelectedSeats();
+            // Generate seats dynamically
+            for (let row = 1; row <= rows; row++) {
+                for (let col = 1; col <= cols; col++) {
+                    const seat = document.createElement('div');
+                    seat.className = 'seat';
+                    seat.dataset.seat = `${String.fromCharCode(64 + row)}${col}`;
+                    seat.textContent = seat.dataset.seat;
+
+                    seat.addEventListener('click', function () {
+                        this.classList.toggle('selected');
+                        updateSelectedSeats();
+                    });
+
+                    seatMap.appendChild(seat);
+                }
+            }
+
+            function updateSelectedSeats() {
+                selectedSeats.clear();
+                const selectedSeatElements = document.querySelectorAll('.seat.selected');
+                selectedSeatElements.forEach(seat => {
+                    selectedSeats.add(seat.dataset.seat);
                 });
 
-                seatMap.appendChild(seat);
+                // Update the value of the hidden input field
+                document.getElementById('selectedSeatsInput').value = Array.from(selectedSeats).join(',');
+                updateBookButtonState();
             }
-        }
 
-        function updateSelectedSeats() {
-        selectedSeats.clear();
-        const selectedSeatElements = document.querySelectorAll('.seat.selected');
-        selectedSeatElements.forEach(seat => {
-        selectedSeats.add(seat.dataset.seat);
+            function updateBookButtonState() {
+                const bookButton = document.querySelector('.btnbook');
+                bookButton.disabled = selectedSeats.size === 0 || selectedDate === null;
+            }
         });
 
-    // Update the value of the hidden input field
-    document.getElementById('selectedSeatsInput').value = Array.from(selectedSeats).join(',');
-    updateBookButtonState();
-}
-
-
-        function updateBookButtonState() {
-            const bookButton = document.querySelector('.btnbook');
-            bookButton.disabled = selectedSeats.size === 0 || selectedDate === null;
-        }
-
         function validateForm() {
-            if (selectedSeats.size === 0) {
+            const selectedSeatsInput = document.getElementById('selectedSeatsInput').value;
+            const selectedShowtimeInput = document.getElementById('selectedShowtimeInput').value;
+            const selectedDate = document.getElementById('date').value;
+
+            if (!selectedSeatsInput) {
                 alert('Please select at least one seat.');
                 return false;
             }
-            if (selectedShowtime === null) {
+
+            if (!selectedShowtimeInput) {
                 alert('Please select a showtime.');
                 return false;
             }
+
+            if (!selectedDate) {
+                alert('Please select a date.');
+                return false;
+            }
+
+            // Additional validation if needed
+
             return true;
         }
-    });
-</script>
+    </script>
 </body>
 </html>

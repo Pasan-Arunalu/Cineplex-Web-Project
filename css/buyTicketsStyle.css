@@ -1,3 +1,5 @@
+/* Your existing styles */
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -7,7 +9,7 @@ body {
 
 #titlecontainer {
   display: flex;
-  flex-direction: column; /* Arrange children in a column */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100px;
@@ -79,7 +81,6 @@ body {
   border-radius: 2px;
 }
 
-
 .form-controls {
   display: flex;
   justify-content: center;
@@ -111,7 +112,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column; /* Align items in a column */
+  flex-direction: column;
   margin-top: 20px;
   background-color: rgba(3, 19, 26, 0.7);
   color: #d4ff9d;
@@ -121,7 +122,7 @@ body {
 
 .date-selector,
 .showtime-display {
-  margin: 10px; /* Adjusted margin for spacing between the date and showtime */
+  margin: 10px;
 }
 
 .date-selector label {
@@ -139,4 +140,16 @@ body {
 .showtime-display-item {
   margin-top: 5px;
   font-size: 22px;
+}
+
+/* Add the new styles for seat selection and showtime highlighting */
+
+.seat.selected {
+  background-color: #d4ff9d;
+  color: #020000;
+}
+
+.showtime-button.selected {
+  background-color: #d4ff9d;
+  color: #020000;
 }
