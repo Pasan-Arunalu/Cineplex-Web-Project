@@ -38,7 +38,8 @@ include("caroFetch.php");
                     <img src="<?php echo $img1; ?>" class="d-block w-100" alt="...">
                     <div class="carouselchild">
                         <div class="btnscontainer">
-                            <a class="crslbtn1" href="<?php echo isset($_SESSION['username']) ? 'buyTickets.php?title=' . urlencode($title1) : 'login.php'; ?>">
+                        <a class="crslbtn1" href="<?php echo isset($_SESSION['username']) ? 'buyTickets.php?title=' . urlencode($title1) . '&showtime=' . urlencode($showtime1) . '&movie_id=' . urlencode($movieID1) : 'login.php'; ?>">
+
                             <img src="img/svg/ticket-detailed.svg" alt=""> Buy Tickets
                             </a>
                             <a class="crslbtn2"><img src="img/svg/play-btn.svg" alt="">   Watch Trailer</a>
@@ -49,7 +50,7 @@ include("caroFetch.php");
                     <img src="<?php echo $img2; ?>" class="d-block w-100" alt="...">
                     <div class="carouselchild">
                         <div class="btnscontainer">
-                            <a class="crslbtn1" href="<?php echo isset($_SESSION['username']) ? 'buyTickets.php?title=' . urlencode($title2) : 'login.php'; ?>">
+                        <a class="crslbtn1" href="<?php echo isset($_SESSION['username']) ? 'buyTickets.php?title=' . urlencode($title2) . '&showtime=' . urlencode($showtime2) . '&movie_id=' . urlencode($movieID2) : 'login.php'; ?>">
                             <img src="img/svg/ticket-detailed.svg" alt=""> Buy Tickets
                             </a>
                             <a class="crslbtn2"><img src="img/svg/play-btn.svg" alt="">   Watch Trailer</a>
@@ -60,7 +61,7 @@ include("caroFetch.php");
                     <img src="<?php echo $img3; ?>" class="d-block w-100" alt="...">
                     <div class="carouselchild">
                         <div class="btnscontainer">
-                            <a class="crslbtn1" href="<?php echo isset($_SESSION['username']) ? 'buyTickets.php?title=' . urlencode($title3) : 'login.php'; ?>">
+                        <a class="crslbtn1" href="<?php echo isset($_SESSION['username']) ? 'buyTickets.php?title=' . urlencode($title3) . '&showtime=' . urlencode($showtime3) . '&movie_id=' . urlencode($movieID3) : 'login.php'; ?>">
                             <img src="img/svg/ticket-detailed.svg" alt=""> Buy Tickets
                             </a>
                             <a class="crslbtn2"><img src="img/svg/play-btn.svg" alt="">   Watch Trailer</a>
@@ -71,7 +72,7 @@ include("caroFetch.php");
                     <img src="<?php echo $img4; ?>" class="d-block w-100" alt="...">
                     <div class="carouselchild">
                         <div class="btnscontainer">
-                            <a class="crslbtn1" href="<?php echo isset($_SESSION['username']) ? 'buyTickets.php?title=' . urlencode($title4) : 'login.php'; ?>">
+                        <a class="crslbtn1" href="<?php echo isset($_SESSION['username']) ? 'buyTickets.php?title=' . urlencode($title4) . '&showtime=' . urlencode($showtime4) . '&movie_id=' . urlencode($movieID4) : 'login.php'; ?>">
                             <img src="img/svg/ticket-detailed.svg" alt=""> Buy Tickets
                             </a>
                             <a class="crslbtn2"><img src="img/svg/play-btn.svg" alt="">   Watch Trailer</a>
@@ -82,7 +83,7 @@ include("caroFetch.php");
                     <img src="<?php echo $img5; ?>" class="d-block w-100" alt="...">
                     <div class="carouselchild">
                         <div class="btnscontainer">
-                            <a class="crslbtn1" href="<?php echo isset($_SESSION['username']) ? 'buyTickets.php?title=' . urlencode($title5) : 'login.php'; ?>">
+                        <a class="crslbtn1" href="<?php echo isset($_SESSION['username']) ? 'buyTickets.php?title=' . urlencode($title5) . '&showtime=' . urlencode($showtime5) . '&movie_id=' . urlencode($movieID5) : 'login.php'; ?>">
                             <img src="img/svg/ticket-detailed.svg" alt=""> Buy Tickets
                             </a>
                             <a class="crslbtn2"><img src="img/svg/play-btn.svg" alt="">   Watch Trailer</a>
@@ -93,7 +94,7 @@ include("caroFetch.php");
                     <img src="<?php echo $img6; ?>" class="d-block w-100" alt="...">
                     <div class="carouselchild">
                         <div class="btnscontainer">
-                            <a class="crslbtn1" href="<?php echo isset($_SESSION['username']) ? 'buyTickets.php?title=' . urlencode($title6) : 'login.php'; ?>">
+                        <a class="crslbtn1" href="<?php echo isset($_SESSION['username']) ? 'buyTickets.php?title=' . urlencode($title6) . '&showtime=' . urlencode($showtime6) . '&movie_id=' . urlencode($movieID6) : 'login.php'; ?>">
                             <img src="img/svg/ticket-detailed.svg" alt=""> Buy Tickets
                             </a>
                             <a class="crslbtn2"><img src="img/svg/play-btn.svg" alt="">   Watch Trailer</a>

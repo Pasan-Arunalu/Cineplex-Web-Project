@@ -1,220 +1,168 @@
 <?php
-// Start or resume the session
 session_start();
-
-
-// Check if the user is not logged in, redirect to the login page
-if (isset($_SESSION['username'])) {
-    $user_id = $_SESSION['username'];
-    // echo "User ID: $user_id";
-} else {
-    header("Location: login.php");
-    exit();
-}
-
 include("connection.php");
 include("caroFetch.php");
-
-
-// Check if the title parameter is set in the URL
-if (isset($_GET['title'])) {
-    $movieTitle = urldecode($_GET['title']);
-
-    // Get showtime information for the specific movie
-    $showtimeInfo = getStartTimesForMovie($movieTitle);
-
-    if ($showtimeInfo && isset($showtimeInfo['start_time'])) {
-        $showtimeId = $showtimeInfo['showtime_id'];
-        $startTime = $showtimeInfo['start_time'];
-    } else {
-        // Output more information about the issue
-        $errorMessage = $showtimeInfo ? "start_time not found" : "Showtime information not found";
-        echo "$errorMessage for movie: $movieTitle";
-        // You can redirect the user or display an error message as needed
-        exit();
-    }
-} else {
-    // Handle the case when the title parameter is not set
-    echo "Movie title not provided in the URL";
-    // You can redirect the user or display an error message as needed
-    exit();
-}
-echo "<script>selectedStartTime = '" . (isset($startTime) ? $startTime : '') . "';</script>";
+include("processBooking.php");
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="css/buyTicketsStyle.css">
-
-    <title>Buy Tickets</title>
-
+    <title>Movie Ticket Booking</title>
 </head>
+<body>
 
-<body>  
+<?php
+    include("navbar.php");
+?>
 
-    <?php
-        include("navbar.php");
-    ?>
+<?php
+// Fetch movie title and showtime_id from URL parameters
+$title = isset($_GET['title']) ? urldecode($_GET['title']) : 'Unknown Movie';
+$selectedShowtimeId = isset($_GET['showtime']) ? intval($_GET['showtime']) : 0;
 
-    <div class="center">
-      <div class="tickets">
-        <div class="ticket-selector">
-        <div class="head">
-            <div class="title"><?php echo htmlspecialchars($movieTitle); ?></div>
-          </div>
-          <div class="seats">
-            <div class="status">
-              <div class="item">Available</div>
-              <div class="item">Booked</div>
-              <div class="item">Selected</div>
-            </div>
-            <div class="all-seats">
-              <input type="checkbox" name="tickets" id="s1" />
-              <label for="s1" class="seat booked"></label>
-            </div>
-          </div>
-          <div class="timings">
-            <div class="dates">
-              <input type="radio" name="date" id="d1" checked />
-              <label for="d1" class="dates-item">
-                <div class="day">Sun</div>
-                <div class="date">11</div>
-              </label>
-              <input type="radio" id="d2" name="date" />
-              <label class="dates-item" for="d2">
-                <div class="day">Mon</div>
-                <div class="date">12</div>
-              </label>
-              <input type="radio" id="d3" name="date" />
-              <label class="dates-item" for="d3">
-                <div class="day">Tue</div>
-                <div class="date">13</div>
-              </label>
-              <input type="radio" id="d4" name="date" />
-              <label class="dates-item" for="d4">
-                <div class="day">Wed</div>
-                <div class="date">14</div>
-              </label>
-              <input type="radio" id="d5" name="date" />
-              <label class="dates-item" for="d5">
-                <div class="day">Thu</div>
-                <div class="date">15</div>
-              </label>
-              <input type="radio" id="d6" name="date" />
-              <label class="dates-item" for="d6">
-                <div class="day">Fri</div>
-                <div class="date">16</div>
-              </label>
-              <input type="radio" id="d7" name="date" />
-              <label class="dates-item" for="d7">
-                <div class="day">Sat</div>
-                <div class="date">17</div>
-              </label>
-            </div>
-            <div class="times">
-              <input type="radio" name="time" id="t1"/>
-              <label for="t1" class="time">10:30</label>
-              <input type="radio" id="t2" name="time" />
-              <label for="t2" class="time"> 13:00 </label>
-              <input type="radio" id="t3" name="time" />
-              <label for="t3" class="time"> 16:00 </label>
-              <input type="radio" id="t4" name="time" />
-              <label for="t4" class="time"> 19:00 </label>
-              <input type="radio" id="t5" name="time" />
-              <label for="t5" class="time"> 21:30 </label>
-            </div>
-          </div>
-        </div>
-        <div class="price">
-          <div class="total">
-            <span> <span class="count">0</span> Tickets </span>
-            <div class="amount">0</div>
-          </div>
-          <button type="button">Book</button>
-        </div>
-      </div>
-    </div>
-    
-    <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        let selectedStartTime = "<?php echo isset($startTime) ? substr($startTime, 0, 5) : ''; ?>";
-        console.log('Selected Start Time:', selectedStartTime);
+$movieId = isset($_GET['movie_id']) ? intval($_GET['movie_id']) : 0;
 
-        let seats = document.querySelector(".all-seats");
-        let amountElement = document.querySelector(".amount");
-        let countElement = document.querySelector(".count");
-        let movieTimes = document.querySelectorAll(".time");
-        console.log('Movie Times:', movieTimes);
+// Fetch all showtimes for the movie
+$queryAllShowtimes = "SELECT showtime_id, start_time 
+                      FROM showtime
+                      WHERE showtime_id IN (SELECT showtime_id FROM movies WHERE movie_id = $movieId)";
+$resultAllShowtimes = mysqli_query($conn, $queryAllShowtimes);
 
-        for (let time of movieTimes) {
-        let startTime = time.textContent.trim();
-
-        if (startTime !== selectedStartTime) {
-            time.classList.add("disabled-time");
-        }
+// Check if showtimes are available
+$showtimes = [];
+if ($resultAllShowtimes && mysqli_num_rows($resultAllShowtimes) > 0) {
+    while ($rowAllShowtimes = mysqli_fetch_assoc($resultAllShowtimes)) {
+        $showtimes[] = $rowAllShowtimes;
     }
+}
 
-        for (let i = 2; i <= 28; i++) {
-            let randint = Math.floor(Math.random() * 2);
-            let booked = randint === 1 ? "booked" : "";
-            seats.insertAdjacentHTML(
-                "beforeend",
-                `<input type="checkbox" name="tickets" id="s${i}" />
-                 <label for="s${i}" class="seat ${booked}">${i}</label>`
-            );
+
+// Fetch all showtimes for the movie
+$queryAllShowtimes = "SELECT showtime.showtime_id, showtime.start_time 
+                      FROM showtime
+                      WHERE showtime.showtime_id IN (SELECT showtime_id FROM movies WHERE movie_id = $movieId)";
+$resultAllShowtimes = mysqli_query($conn, $queryAllShowtimes);
+
+// Check if showtimes are available
+$showtimes = [];
+if ($resultAllShowtimes && mysqli_num_rows($resultAllShowtimes) > 0) {
+    while ($rowAllShowtimes = mysqli_fetch_assoc($resultAllShowtimes)) {
+        $showtimes[] = $rowAllShowtimes;
+    }
+} else {
+    echo "No showtimes found for the selected movie.";
+}
+
+?>
+
+<div id="titlecontainer">
+    <h1 class="title"><?php echo $title; ?></h1>
+    <h5 class="title2">Book Your Tickets</h5>
+</div>
+
+<form action="processBooking.php" method="post" class="ticketsForm">
+    <div id="seat-map-container">
+        <div id="seat-map">
+            <!-- Seats will be dynamically generated here -->
+        </div>
+        <div id="screen">screen</div>
+    </div>
+
+    <div class="date-showtime-container">
+        <div class="date-selector">
+            <label for="date">Select Date :</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+
+        <div class="showtime-display">
+            <?php foreach ($showtimes as $showtime) : ?>
+                <span class="showtime-display-item">
+                    Showtime : <?php echo $showtime['start_time'];  ?> 
+                </span>
+            <?php endforeach; ?>
+        </div>
+    </div>
+
+    <div class="form-controls">
+        <button type="submit" class="btnbook">Book Tickets</button>
+    </div>
+</form>
+
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const seatMap = document.getElementById('seat-map');
+        const showtimeButtons = document.querySelectorAll('.showtime-button');
+        const selectedSeats = new Set();
+        let selectedShowtime = null;
+
+        // Define the number of rows and columns
+        const rows = 5;
+        const cols = 6;
+
+        // Generate seats dynamically
+        for (let row = 1; row <= rows; row++) {
+            for (let col = 1; col <= cols; col++) {
+                const seat = document.createElement('div');
+                seat.className = 'seat';
+                seat.dataset.seat = `${String.fromCharCode(64 + row)}${col}`;
+                seat.textContent = seat.dataset.seat;
+
+                seat.addEventListener('click', function () {
+                    this.classList.toggle('selected');
+                    updateSelectedSeats();
+                });
+
+                seatMap.appendChild(seat);
+            }
         }
 
-        let tickets = seats.querySelectorAll("input");
-        tickets.forEach((ticket) => {
-            ticket.addEventListener("change", updateAmount);
+        // Add click event listeners to showtime buttons
+        showtimeButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                selectShowtime(this);
+                updateSelectedSeats();
+            });
         });
 
-        movieTimes.forEach((time) => {
-            let startTime = time.textContent.trim().substring(0, 5);
-            let isDisabled = startTime !== selectedStartTime;
+        function selectShowtime(button) {
+            showtimeButtons.forEach(btn => btn.classList.remove('selected'));
+            button.classList.add('selected');
+            selectedShowtime = button.value;
+            updateBookButtonState();
+        }
 
-            console.log('Start Time:', startTime, 'Disabled:', isDisabled);
+        function updateSelectedSeats() {
+            selectedSeats.clear();
+            const selectedSeatElements = document.querySelectorAll('.seat.selected');
+            selectedSeatElements.forEach(seat => selectedSeats.add(seat.dataset.seat));
+            updateBookButtonState();
+        }
 
-            time.disabled = isDisabled;
-        });
+        function updateBookButtonState() {
+            const bookButton = document.querySelector('.btnbook');
+            bookButton.disabled = selectedSeats.size === 0 || selectedShowtime === null;
+        }
 
-        function updateAmount() {
-            let amount = 1000 * [...tickets].filter((ticket) => ticket.checked).length;
-            let count = [...tickets].filter((ticket) => ticket.checked).length;
-
-            amountElement.textContent = amount;
-            countElement.textContent = count;
+        function validateForm() {
+            if (selectedSeats.size === 0) {
+                alert('Please select at least one seat.');
+                return false;
+            }
+            if (selectedShowtime === null) {
+                alert('Please select a showtime.');
+                return false;
+            }
+            return true;
         }
     });
 </script>
-
-<script>
-    // Assume PHP time format is HH:MM:SS, adjust as needed
-    selectedStartTime = "<?php echo isset($startTime) ? substr($startTime, 0, 5) : ''; ?>";
-
-    let times = document.querySelectorAll(".time");
-    times.forEach((time) => {
-        let startTime = time.textContent.trim();
-
-        // Compare selected start time with available times
-        if (startTime !== selectedStartTime) {
-            time.disabled = true;
-        }
-    });
-</script>
-
-<script>
-    console.log('JavaScript selectedStartTime: ' + JSON.stringify(selectedStartTime));
-    // ... (rest of the JavaScript code)
-</script>
-
+<script src="script.js"></script>
 </body>
-
 </html>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("connection.php");
 
 // Initialize an empty showtime dropdown variable
