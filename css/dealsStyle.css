@@ -1,0 +1,129 @@
+body {
+    background-image: url(img/b0e63b94-e461-4f65-9183-e8941cb2fa6c.png);
+    background-size: cover;
+}
+
+.adscontainer{
+    margin-top: 150px;
+    height: 1200px;
+}
+
+.ad1{
+    height: 500px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.ad1img{
+    width: 30%;
+    height: 100%;
+    background-color: rgba(3, 19, 26, 0.8);
+}
+
+.ad1dis{
+    width: 50%;
+    height: 100%;
+    background-color: rgba(3, 19, 26, 0.8);
+    box-shadow: 0 0 20px rgba(3, 0, 0, 0.9);
+}
+
+.ad2{
+    margin-top: 50px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+.ad2img{
+    width: 30%;
+    height: 100%;
+    background-color: rgba(3, 19, 26, 0.8);
+}
+
+.ad2dis{
+    width: 50%;
+    height: 100%;
+    background-color: rgba(3, 19, 26, 0.8);
+    box-shadow: 0 0 20px rgba(3, 0, 0, 0.9);
+}
+
+.imgchild1{
+    margin: auto;
+    display: flex;
+    height: 80%;
+    width: 90%;
+    align-items: center;
+    margin-top: 50px;
+    background-image: url(img/GettyImages-1147485288.jpg);
+    background-size: cover;
+    box-shadow: 0 0 20px rgba(3, 0, 0, 0.7);
+}
+
+.dischild1{
+    margin: auto;
+    display: flex;
+    height: 80%;
+    width: 90%;
+    align-items: center;
+    margin-top: 50px;
+    flex-direction: column;
+}
+
+.dischild1 h2{
+    color: snow;
+    font-family: "League Spartan", sans-serif;
+    font-size: 40px;
+}
+
+.dischild1 h4{
+    color: snow;
+    margin-top: 40px;
+    font-family: "League Spartan", sans-serif;
+    font-size: 20px;
+}
+
+
+.imgchild2{
+    margin: auto;
+    display: flex;
+    height: 80%;
+    width: 90%;
+    align-items: center;
+    margin-top: 50px;
+    background-image: url(img/wp11932279-debit-card-wallpapers.jpg);
+    background-size: cover;
+    box-shadow: 0 0 20px rgba(3, 0, 0, 0.7);
+}
+
+.dischild2{
+    margin: auto;
+    display: flex;
+    height: 80%;
+    width: 90%;
+    align-items: center;
+    margin-top: 50px;
+    flex-direction: column;
+}
+
+.dischild2 h2{
+    color: snow;
+    font-family: "League Spartan", sans-serif;
+    font-size: 40px;
+}
+
+.dischild2 h4{
+    color: snow;
+    margin-top: 40px;
+    font-family: "League Spartan", sans-serif;
+    font-size: 20px;
+}
+
+footer {
+    background-color: rgba(3, 19, 26, 0.9);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    bottom: 0;
+    width: 100%;
+}

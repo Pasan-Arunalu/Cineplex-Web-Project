@@ -17,6 +17,9 @@ header {
     margin: 100px auto; /* Center-align the wrapper */
     background-color: rgba(3, 19, 26, 0.7); 
     width: 800px;
+    padding-top: 30px;
+    box-shadow: 0 0 20px rgba(3, 0, 0, 0.9);
+    background-image: url(img/b0e63b94-e461-4f65-9183-e8941cb2fa6c.png);
 }
 
 section {
@@ -53,4 +56,42 @@ th {
 
 td{
     color: #fff;
+}
+
+.feedback-form {
+    margin-top: 20px;
+    padding-bottom: 50px;
+}
+
+.feedback-form form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.feedback-form label,
+.feedback-form textarea {
+    display: block;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.feedback-form textarea {
+    width: 100%;
+    resize: vertical;
+}
+
+input{
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;
+    border: none;
+}
+
+footer {
+    background-color: rgba(3, 19, 26, 0.9);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    bottom: 0;
+    width: 100%;
 }

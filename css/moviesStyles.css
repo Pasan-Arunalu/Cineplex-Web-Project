@@ -3,7 +3,10 @@ body {
 }
 
 .container {
-    margin-top: 80px;
+    margin-top: 120px;
+    box-shadow: 0 0 20px rgba(3, 0, 0, 0.7);
+    background-image: url(img/b0e63b94-e461-4f65-9183-e8941cb2fa6c.png);
+    padding-bottom: 50px;
 }
 
 .col {
@@ -22,6 +25,7 @@ body {
     border: 1px solid #ddd; 
     border-radius: 10px;
     position: relative;
+    /* box-shadow: 0 0 20px rgba(3, 0, 0, 0.9); */
 }
 
 .movieimg {
@@ -42,6 +46,7 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
+    /* box-shadow: 0 0 20px rgba(3, 0, 0, 0.7); */
 }
 
 .movietitle {
@@ -52,6 +57,7 @@ body {
     justify-content: center;
     background-color: rgba(3, 19, 26, 0.5);
     border-radius: 0 0 10px 10px;
+    /* box-shadow: 0 0 20px rgba(3, 0, 0, 0.9); */
 }
 
 .movietitle p {
@@ -76,22 +82,27 @@ body {
 
 .moviecard:hover .buy-tickets-btn {
     opacity: 1; /* Set opacity to 1 on hover */
-    background-color: rgba(3, 19, 26, 0.5);
+    background-color: rgba(3, 19, 26, 0.7);
     transition: 0.8s;
 }
 
-.buy-tickets-btn button {
+.crdbtn2 {
     background-color: #D4FF9D;
-    color: #0F1B24;
-    font-weight: 500;
-    border: none;
-    border-radius: 10px;
+    width: 50%;
     height: 50px;
-    width: 150px;
+    display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 50%;
-    transition: transform 0.8s; /* Transition transform property */
+    color: #03131A;
+    font-family: "League Spartan", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 1s;
+    margin: 0;
+    margin-top: 150px;
+    margin-left: 65px;
+    border-radius: 10px;
+    text-decoration: none;
 }
 
 .buy-tickets-btn p {
@@ -100,9 +111,14 @@ body {
     justify-content: center;
 }
 
-.buy-tickets-btn button:hover {
-    transform: scale(1.1);
+.crdbtn2:hover {
+    transform: scale(1.03);
     transition: 0.8s;
-    background-color: #D4FF9D;
-    color: #0F1B24;
 }
+
+.nst{
+    color: snow;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+

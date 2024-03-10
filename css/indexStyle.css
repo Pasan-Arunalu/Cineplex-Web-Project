@@ -10,7 +10,8 @@ body {
 
 #carouselautoplaying {
     top: 90px;
-    width: 100%; /* Ensure the carousel takes the full width */
+    width: 100%;
+    box-shadow: 0 0 50px rgba(3, 0, 0, 0.7);
 }
 
 .carousel-item img {
@@ -106,10 +107,11 @@ body {
     height: 80px;
     width: 1200px;
     margin-left: 18.5%;
-    background-color: rgba(3, 19, 26, 0.7);
     color: snow;
     font-family: "League Spartan", sans-serif;
     font-size: 30px;
+    box-shadow: 0 0 30px rgba(3, 0, 0, 0.7);
+    background-image: url(img/b0e63b94-e461-4f65-9183-e8941cb2fa6c.png);
     
 }
 
@@ -169,12 +171,13 @@ body {
 .card {
     height: 600px;
     width: 350px;
-    background-color: rgba(3, 19, 26, 0.7);    
+    background-color: rgba(3, 19, 26, 0.7);   
 }
 
 .card-body{
     height: 100px;
-    background-color: #0F1B24;
+    box-shadow: 0 0 20px rgba(3, 0, 0, 0.7);
+    background-image: url(img/b0e63b94-e461-4f65-9183-e8941cb2fa6c.png);
 }
 
 .cardbtncontainer{
@@ -409,13 +412,15 @@ body {
 .ad1img{
     width: 30%;
     height: 100%;
-    background-color: rgba(3, 19, 26, 0.8);
+    box-shadow: 0 0 20px rgba(3, 0, 0, 0.7);
+    background-image: url(img/b0e63b94-e461-4f65-9183-e8941cb2fa6c.png);
 }
 
 .ad1dis{
     width: 50%;
     height: 100%;
-    background-color: rgba(3, 19, 26, 0.8);
+    box-shadow: 0 0 20px rgba(3, 0, 0, 0.7);
+    background-image: url(img/b0e63b94-e461-4f65-9183-e8941cb2fa6c.png);
 }
 
 .ad2{
@@ -428,13 +433,15 @@ body {
 .ad2img{
     width: 30%;
     height: 100%;
-    background-color: rgba(3, 19, 26, 0.8);
+    box-shadow: 0 0 20px rgba(3, 0, 0, 0.7);
+    background-image: url(img/b0e63b94-e461-4f65-9183-e8941cb2fa6c.png);
 }
 
 .ad2dis{
     width: 50%;
     height: 100%;
-    background-color: rgba(3, 19, 26, 0.8);
+    box-shadow: 0 0 20px rgba(3, 0, 0, 0.7);
+    background-image: url(img/b0e63b94-e461-4f65-9183-e8941cb2fa6c.png);
 }
 
 .imgchild1{
@@ -446,6 +453,7 @@ body {
     margin-top: 50px;
     background-image: url(img/GettyImages-1147485288.jpg);
     background-size: cover;
+    box-shadow: 0 0 20px rgba(3, 0, 0, 0.7);
 }
 
 .dischild1{
@@ -481,6 +489,7 @@ body {
     margin-top: 50px;
     background-image: url(img/wp11932279-debit-card-wallpapers.jpg);
     background-size: cover;
+    box-shadow: 0 0 20px rgba(3, 0, 0, 0.7);
 }
 
 .dischild2{

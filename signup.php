@@ -9,15 +9,20 @@ if (isset($_POST["submit"])) {
     // Perform additional validation if needed
     if (empty($username) || empty($password) || empty($passwordConfirm)) {
         $_SESSION["error"] = "Username, password, and password confirmation are required.";
-        exit();
     }
 
     // Check if the password and password confirmation match
     if ($password !== $passwordConfirm) {
         $_SESSION["error"] = "Password and password confirmation do not match.";
-        exit();
     }
 
+    // Check if the username already exists
+    $checkUsernameQuery = "SELECT * FROM users WHERE username = '$username'";
+    $checkUsernameResult = $conn->query($checkUsernameQuery);
+
+    if ($checkUsernameResult->num_rows > 0) {
+        $_SESSION["error"] = "Username already exists. Please choose a different one.";
+    } else {
     // Insert the user into the database
     $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
 
@@ -27,12 +32,14 @@ if (isset($_POST["submit"])) {
         $_SESSION["error"] = "Error: " . $sql . "<br>" . $conn->error;
     }
 }
+}
 
 $conn->close();
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,19 +52,20 @@ $conn->close();
 <body>
 
     <?php
-        include ("navbar.php");
+    include("navbar.php");
     ?>
 
     <div class="signupform">
         <?php
-            // Display error message if set in the session
-            if (isset($_SESSION["error"])) {
-                echo "<p style='color: red;'>" . $_SESSION["error"] . "</p>";
-                unset($_SESSION["error"]); // Clear the error message
-            } else if (isset($_SESSION["success"])) {
-                echo "<p style='color: green;'>" . $_SESSION["success"] . "</p>";
-                unset($_SESSION["success"]); 
-            };
+        // Display error message if set in the session
+        if (isset($_SESSION["error"])) {
+            echo "<p style='color: red;'>" . $_SESSION["error"] . "</p>";
+            unset($_SESSION["error"]); // Clear the error message
+        } else if (isset($_SESSION["success"])) {
+            echo "<p style='color: green;'>" . $_SESSION["success"] . "</p>";
+            unset($_SESSION["success"]);
+        }
+        ;
         ?>
         <h1>Cineplex</h1>
         <h3>Sign Up</h3>
@@ -65,7 +73,7 @@ $conn->close();
             <div class="input-group">
                 <input type="text" id="un" name="user" placeholder="Enter Username" required>
             </div>
-        
+
             <div class="input-group">
                 <input type="password" id="pw" name="pass" placeholder="Enter Password" required>
                 <span toggle="#pw" class="toggle-password"><img src="img/svg/eye.svg" alt=""></span>
@@ -75,11 +83,11 @@ $conn->close();
                 <input type="password" id="pwc" name="pass_confirm" placeholder="Confirm Password" required>
                 <span toggle="#pwc" class="toggle-password-confirm"><img src="img/svg/eye.svg" alt=""></span>
             </div>
-        
-            <input type="submit" id="btn" value="Sign Up" name="submit"/>
-            
+
+            <input type="submit" id="btn" value="Sign Up" name="submit" />
+
         </form>
-    </div>    
+    </div>
 
 
     <!-- show pw icon js -->

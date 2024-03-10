@@ -24,17 +24,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows == 1) {
         // Successful login
-        // Fetch the user ID from the database
+        // Fetch the user data from the database
         $user_data = $result->fetch_assoc();
         $user_id = $user_data['user_id']; // Adjust the key based on your database structure
-    
+        $user_role = $user_data['role']; // Adjust the key based on your database structure
+
         // Set session variables
         $_SESSION["user_id"] = $user_id;
         $_SESSION["username"] = $username;
-    
-        // Redirect to a secure page or perform additional actions
-        header("Location: index.php");
-        exit();
+
+        // Redirect based on user role
+        if ($user_role == 'admin') {
+            header("Location: admin_panel.php");
+            exit();
+        } elseif ($user_role == 'staff') {
+            header("Location: admin_panel.php"); // Change 'staff.php' to the appropriate staff page
+            exit();
+        } else {
+            // Redirect to a default page or perform additional actions for other roles
+            header("Location: index.php");
+            exit();
+        }
     } else {
         // Invalid login
         $_SESSION["error"] = "Invalid username or password";
@@ -42,13 +52,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
-    // Close the prepared statement
-    $stmt->close();
 }
 
 // Close the database connection
 $conn->close();
 ?>
+
 
 
 <!DOCTYPE html>

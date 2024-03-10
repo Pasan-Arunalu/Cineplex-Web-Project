@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("connection.php");
 
 include("caroFetch.php");
@@ -24,6 +25,7 @@ include("caroFetch.php");
   ?>
 
   <div class="container text-center">
+    <h2 class="nst">Movies on CINEPLEX</h2>
     <!-- row 1 -->
     <div class="row">
       <div class="col">
@@ -36,9 +38,10 @@ include("caroFetch.php");
               <p><?php echo $title7; ?></p>
             </div>
             <div class="buy-tickets-btn">
-              <button class="btn btn-primary"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button> <br> <br>
-              <p>Small description for the movie</p>
-              <p>Small description for the movie</p>
+            <a class="crdbtn2"
+              href="<?php echo isset($_SESSION['username']) ? 'buyTickets.php?title=' . urlencode($title7) . '&showtime=' . urlencode($showtime7) . '&movie_id=' . urlencode($movieID7) : 'login.php'; ?>"><img src="img/svg/ticket-detailed.svg" 
+              alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</a> <br> <br>
+              <!-- <p>Small description for the movie</p> -->
             </div>
           </div>   
         </div>
@@ -53,9 +56,10 @@ include("caroFetch.php");
               <p><?php echo $title8; ?></p>
             </div>
             <div class="buy-tickets-btn">
-              <button class="btn btn-primary"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button> <br> <br>
-              <p>Small description for the movie</p>
-              <p>Small description for the movie</p>
+            <a class="crdbtn2"
+              href="<?php echo isset($_SESSION['username']) ? 'buyTickets.php?title=' . urlencode($title8) . '&showtime=' . urlencode($showtime8) . '&movie_id=' . urlencode($movieID8) : 'login.php'; ?>"><img src="img/svg/ticket-detailed.svg" 
+              alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</a> <br> <br>
+              <!-- <p>Small description for the movie</p> -->
             </div>
           </div>   
         </div>
@@ -70,9 +74,10 @@ include("caroFetch.php");
               <p><?php echo $title9; ?></p>
             </div>
             <div class="buy-tickets-btn">
-              <button class="btn btn-primary"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button> <br> <br>
-              <p>Small description for the movie</p>
-              <p>Small description for the movie</p>
+            <a class="crdbtn2"
+              href="<?php echo isset($_SESSION['username']) ? 'buyTickets.php?title=' . urlencode($title9) . '&showtime=' . urlencode($showtime9) . '&movie_id=' . urlencode($movieID9) : 'login.php'; ?>"><img src="img/svg/ticket-detailed.svg" 
+              alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</a> <br> <br>
+              <!-- <p>Small description for the movie</p> -->
             </div>
           </div>   
         </div>
@@ -90,9 +95,10 @@ include("caroFetch.php");
               <p><?php echo $title10; ?></p>
             </div>
             <div class="buy-tickets-btn">
-              <button class="btn btn-primary"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button> <br> <br>
-              <p>Small description for the movie</p>
-              <p>Small description for the movie</p>
+            <a class="crdbtn2"
+              href="<?php echo isset($_SESSION['username']) ? 'buyTickets.php?title=' . urlencode($title10) . '&showtime=' . urlencode($showtime10) . '&movie_id=' . urlencode($movieID10) : 'login.php'; ?>"><img src="img/svg/ticket-detailed.svg" 
+              alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</a> <br> <br>
+              <!-- <p>Small description for the movie</p> -->
             </div>
           </div>   
         </div>
@@ -107,9 +113,10 @@ include("caroFetch.php");
               <p><?php echo $title11; ?></p>
             </div>
             <div class="buy-tickets-btn">
-              <button class="btn btn-primary"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button> <br> <br>
-              <p>Small description for the movie</p>
-              <p>Small description for the movie</p>
+            <a class="crdbtn2"
+              href="<?php echo isset($_SESSION['username']) ? 'buyTickets.php?title=' . urlencode($title11) . '&showtime=' . urlencode($showtime11) . '&movie_id=' . urlencode($movieID11) : 'login.php'; ?>"><img src="img/svg/ticket-detailed.svg" 
+              alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</a> <br> <br>
+              <!-- <p>Small description for the movie</p> -->
             </div>
           </div>   
         </div>
@@ -124,9 +131,10 @@ include("caroFetch.php");
               <p><?php echo $title12; ?></p>
             </div>
             <div class="buy-tickets-btn">
-              <button class="btn btn-primary"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button> <br> <br>
-              <p>Small description for the movie</p>
-              <p>Small description for the movie</p>
+            <a class="crdbtn2"
+              href="<?php echo isset($_SESSION['username']) ? 'buyTickets.php?title=' . urlencode($title12) . '&showtime=' . urlencode($showtime12) . '&movie_id=' . urlencode($movieID12) : 'login.php'; ?>"><img src="img/svg/ticket-detailed.svg" 
+              alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</a> <br> <br>
+              <!-- <p>Small description for the movie</p> -->
             </div>
           </div>   
         </div>
@@ -144,9 +152,10 @@ include("caroFetch.php");
               <p><?php echo $title13; ?></p>
             </div>
             <div class="buy-tickets-btn">
-              <button class="btn btn-primary"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button> <br> <br>
-              <p>Small description for the movie</p>
-              <p>Small description for the movie</p>
+            <a class="crdbtn2"
+              href="<?php echo isset($_SESSION['username']) ? 'buyTickets.php?title=' . urlencode($title13) . '&showtime=' . urlencode($showtime13) . '&movie_id=' . urlencode($movieID13) : 'login.php'; ?>"><img src="img/svg/ticket-detailed.svg" 
+              alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</a> <br> <br>
+              <!-- <p>Small description for the movie</p> -->
             </div>
           </div>   
         </div>
@@ -161,9 +170,10 @@ include("caroFetch.php");
               <p><?php echo $title14; ?></p>
             </div>
             <div class="buy-tickets-btn">
-              <button class="btn btn-primary"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button> <br> <br>
-              <p>Small description for the movie</p>
-              <p>Small description for the movie</p>
+            <a class="crdbtn2"
+              href="<?php echo isset($_SESSION['username']) ? 'buyTickets.php?title=' . urlencode($title14) . '&showtime=' . urlencode($showtime14) . '&movie_id=' . urlencode($movieID14) : 'login.php'; ?>"><img src="img/svg/ticket-detailed.svg" 
+              alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</a> <br> <br>
+              <!-- <p>Small description for the movie</p> -->
             </div>
           </div>   
         </div>
@@ -178,9 +188,10 @@ include("caroFetch.php");
               <p><?php echo $title15; ?></p>
             </div>
             <div class="buy-tickets-btn">
-              <button class="btn btn-primary"><img src="img/svg/ticket-detailed.svg" alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</button> <br> <br>
-              <p>Small description for the movie</p>
-              <p>Small description for the movie</p>
+            <a class="crdbtn2"
+              href="<?php echo isset($_SESSION['username']) ? 'buyTickets.php?title=' . urlencode($title15) . '&showtime=' . urlencode($showtime15) . '&movie_id=' . urlencode($movieID15) : 'login.php'; ?>"><img src="img/svg/ticket-detailed.svg" 
+              alt="" style="height:25px; width:25px; margin: 5px;">Buy Tickets</a> <br> <br>
+              <!-- <p>Small description for the movie</p> -->
             </div>
           </div>   
         </div>

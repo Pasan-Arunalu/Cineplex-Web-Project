@@ -1,27 +1,27 @@
 <?php
 
 
-$sql1 = "SELECT movie_id, title, description, image_path, showtime_id FROM movies WHERE movie_id = 1";
-$sql2 = "SELECT movie_id, title, description, image_path, showtime_id FROM movies WHERE movie_id = 2";
-$sql3 = "SELECT movie_id, title, description, image_path, showtime_id FROM movies WHERE movie_id = 3";
-$sql4 = "SELECT movie_id, title, description, image_path, showtime_id FROM movies WHERE movie_id = 4";
-$sql5 = "SELECT movie_id, title, description, image_path, showtime_id FROM movies WHERE movie_id = 5";
-$sql6 = "SELECT movie_id, title, description, image_path, showtime_id FROM movies WHERE movie_id = 6";
-$sql7 = "SELECT movie_id, title, description, image_path, showtime_id FROM movies WHERE movie_id = 7";
-$sql8 = "SELECT movie_id, title, description, image_path, showtime_id FROM movies WHERE movie_id = 8";
-$sql9 = "SELECT movie_id, title, description, image_path, showtime_id FROM movies WHERE movie_id = 9";
-$sql10 = "SELECT movie_id, title, description, image_path, showtime_id FROM movies WHERE movie_id = 10";
-$sql11 = "SELECT movie_id, title, description, image_path, showtime_id FROM movies WHERE movie_id = 11";
-$sql12 = "SELECT movie_id, title, description, image_path, showtime_id FROM movies WHERE movie_id = 12";
-$sql13 = "SELECT movie_id, title, description, image_path, showtime_id FROM movies WHERE movie_id = 13";
-$sql14 = "SELECT movie_id, title, description, image_path, showtime_id FROM movies WHERE movie_id = 14";
-$sql15 = "SELECT movie_id, title, description, image_path, showtime_id FROM movies WHERE movie_id = 15";
-$sql16 = "SELECT movie_id, title, description, image_path, showtime_id FROM movies WHERE movie_id = 16";
-$sql17 = "SELECT movie_id, title, description, image_path, showtime_id FROM movies WHERE movie_id = 17";
-$sql18 = "SELECT movie_id, title, description, image_path, showtime_id FROM movies WHERE movie_id = 18";
-$sql19 = "SELECT movie_id, title, description, image_path, showtime_id FROM movies WHERE movie_id = 19";
-$sql20 = "SELECT movie_id, title, description, image_path, showtime_id FROM movies WHERE movie_id = 20";
-$sql21 = "SELECT movie_id, title, description, image_path, showtime_id FROM movies WHERE movie_id = 21";
+$sql1 = "SELECT movie_id, title, description, image_path, video_url, showtime_id  FROM movies WHERE movie_id = 1";
+$sql2 = "SELECT movie_id, title, description, image_path, video_url, showtime_id  FROM movies WHERE movie_id = 2";
+$sql3 = "SELECT movie_id, title, description, image_path, video_url, showtime_id  FROM movies WHERE movie_id = 3";
+$sql4 = "SELECT movie_id, title, description, image_path, video_url, showtime_id  FROM movies WHERE movie_id = 4";
+$sql5 = "SELECT movie_id, title, description, image_path, video_url, showtime_id  FROM movies WHERE movie_id = 5";
+$sql6 = "SELECT movie_id, title, description, image_path, video_url, showtime_id  FROM movies WHERE movie_id = 6";
+$sql7 = "SELECT movie_id, title, description, image_path, video_url, showtime_id  FROM movies WHERE movie_id = 7";
+$sql8 = "SELECT movie_id, title, description, image_path, video_url, showtime_id  FROM movies WHERE movie_id = 8";
+$sql9 = "SELECT movie_id, title, description, image_path, video_url, showtime_id  FROM movies WHERE movie_id = 9";
+$sql10 = "SELECT movie_id, title, description, image_path, video_url, showtime_id  FROM movies WHERE movie_id = 10";
+$sql11 = "SELECT movie_id, title, description, image_path, video_url, showtime_id  FROM movies WHERE movie_id = 11";
+$sql12 = "SELECT movie_id, title, description, image_path, video_url, showtime_id  FROM movies WHERE movie_id = 12";
+$sql13 = "SELECT movie_id, title, description, image_path, video_url, showtime_id  FROM movies WHERE movie_id = 13";
+$sql14 = "SELECT movie_id, title, description, image_path, video_url, showtime_id  FROM movies WHERE movie_id = 14";
+$sql15 = "SELECT movie_id, title, description, image_path, video_url, showtime_id  FROM movies WHERE movie_id = 15";
+$sql16 = "SELECT movie_id, title, description, image_path, video_url, showtime_id  FROM movies WHERE movie_id = 16";
+$sql17 = "SELECT movie_id, title, description, image_path, video_url, showtime_id  FROM movies WHERE movie_id = 17";
+$sql18 = "SELECT movie_id, title, description, image_path, video_url, showtime_id  FROM movies WHERE movie_id = 18";
+$sql19 = "SELECT movie_id, title, description, image_path, video_url, showtime_id  FROM movies WHERE movie_id = 19";
+$sql20 = "SELECT movie_id, title, description, image_path, video_url, showtime_id  FROM movies WHERE movie_id = 20";
+$sql21 = "SELECT movie_id, title, description, image_path, video_url, showtime_id  FROM movies WHERE movie_id = 21";
 
 
 $result1 = $conn->query($sql1);
@@ -53,126 +53,147 @@ $disc1 = "";
 $img1 = "";
 $showtime1 = "";
 $movieID1 = "";
+$url1 = "";
 
 $title2 = "";
 $disc2 = "";
 $img2 = "";
 $showtime2 = "";
 $movieID2 = "";
+$url2 = "";
 
 $title3 = "";
 $disc3 = "";
 $img3 = "";
 $showtime3 = "";
 $movieID3 = "";
+$url3 = "";
 
 $title4 = "";
 $disc4 = "";
 $img4 = "";
 $showtime4 = "";
 $movieID4 = "";
+$url4 = "";
 
 $title5 = "";
 $disc5 = "";
 $img5 = "";
 $showtime5 = "";
 $movieID5 = "";
+$url5 = "";
 
 $title6 = "";
 $disc6 = "";
 $img6 = "";
 $showtime6 = "";
 $movieID6 = "";
+$url6 = "";
 
 $title7 = "";
 $disc7 = "";
 $img7 = "";
 $showtime7 = "";
 $movieID7 = "";
+$url7 = "";
 
 $title8 = "";
 $disc8 = "";
 $img8 = "";
 $showtime8 = "";
 $movieID8 = "";
+$url8 = "";
 
 $title9 = "";
 $disc9 = "";
 $img9 = "";
 $showtime9 = "";
 $movieID9 = "";
+$url9 = "";
 
 $title10 = "";
 $disc10 = "";
 $img10 = "";
 $showtime10 = "";
 $movieID10 = "";
+$url10 = "";
 
 $title11 = "";
 $disc11 = "";
 $img11 = "";
 $showtime11 = "";
 $movieID11 = "";
+$url11 = "";
 
 $title12 = "";
 $disc12 = "";
 $img12 = "";
 $showtime12 = "";
 $movieID12 = "";
+$url12 = "";
 
 $title13 = "";
 $disc13 = "";
 $img13 = "";
 $showtime13 = "";
 $movieID13 = "";
+$url13 = "";
 
 $title14 = "";
 $disc14 = "";
 $img14 = "";
 $showtime14 = "";
 $movieID14 = "";
+$url14 = "";
 
 $title15 = "";
 $disc15 = "";
 $img15 = "";
 $showtime15 = "";
 $movieID15 = "";
+$url15 = "";
 
 $title16 = "";
 $disc16 = "";
 $img16 = "";
 $showtime16 = "";
 $movieID16 = "";
+$url16 = "";
 
 $title17 = "";
 $disc17 = "";
 $img17 = "";
 $showtime17 = "";
 $movieID17 = "";
+$url17 = "";
 
 $title18 = "";
 $disc18 = "";
 $img18 = "";
 $showtime18 = "";
 $movieID18 = "";
+$url18 = "";
 
 $title19 = "";
 $disc19 = "";
 $img19 = "";
 $showtime19 = "";
 $movieID19 = "";
+$url19 = "";
 
 $title20 = "";
 $disc20 = "";
 $img20 = "";
 $showtime20 = "";
 $movieID20 = "";
+$url20 = "";
 
 $title21 = "";
 $disc21 = "";
 $img21 = "";
 $showtime21 = "";
 $movieID21 = "";
+$url21 = "";
 
 
 if ($result1->num_rows > 0) {
@@ -182,6 +203,7 @@ if ($result1->num_rows > 0) {
     $img1 = $row["image_path"];
     $showtime1 = $row["showtime_id"];
     $movieID1 = $row["movie_id"];
+    $url1 = $row["video_url"];
 }
 
 if ($result2->num_rows > 0) {
@@ -191,6 +213,7 @@ if ($result2->num_rows > 0) {
     $img2 = $row["image_path"];
     $showtime2 = $row["showtime_id"];
     $movieID2 = $row["movie_id"];
+    $url2 = $row["video_url"];
 }
 
 if ($result3->num_rows > 0) {
@@ -200,6 +223,7 @@ if ($result3->num_rows > 0) {
     $img3 = $row["image_path"];
     $showtime3 = $row["showtime_id"];
     $movieID3 = $row["movie_id"];
+    $url3 = $row["video_url"];
 }
 
 if ($result4->num_rows > 0) {
@@ -209,6 +233,7 @@ if ($result4->num_rows > 0) {
     $img4 = $row["image_path"];
     $showtime4 = $row["showtime_id"];
     $movieID4 = $row["movie_id"]; 
+    $url4 = $row["video_url"];
 }
 
 if ($result5->num_rows > 0) {
@@ -218,6 +243,7 @@ if ($result5->num_rows > 0) {
     $img5 = $row["image_path"];
     $showtime5 = $row["showtime_id"];
     $movieID5 = $row["movie_id"];
+    $url5 = $row["video_url"];
 }
 
 if ($result6->num_rows > 0) {
@@ -227,6 +253,7 @@ if ($result6->num_rows > 0) {
     $img6 = $row["image_path"];
     $showtime6 = $row["showtime_id"];
     $movieID6 = $row["movie_id"];
+    $url6 = $row["video_url"];
 }
 
 if ($result7->num_rows > 0) {
@@ -236,6 +263,7 @@ if ($result7->num_rows > 0) {
     $img7 = $row["image_path"];
     $showtime7 = $row["showtime_id"];
     $movieID7 = $row["movie_id"];
+    $url7 = $row["video_url"];
 }
 
 if ($result8->num_rows > 0) {
@@ -245,6 +273,7 @@ if ($result8->num_rows > 0) {
     $img8 = $row["image_path"];
     $showtime8 = $row["showtime_id"];
     $movieID8 = $row["movie_id"];
+    $url8 = $row["video_url"];
 }
 
 if ($result9->num_rows > 0) {
@@ -254,6 +283,7 @@ if ($result9->num_rows > 0) {
     $img9 = $row["image_path"];
     $showtime9 = $row["showtime_id"];
     $movieID9 = $row["movie_id"];
+    $url9 = $row["video_url"];
 }
 
 if ($result10->num_rows > 0) {
@@ -263,6 +293,7 @@ if ($result10->num_rows > 0) {
     $img10 = $row["image_path"];
     $showtime10 = $row["showtime_id"];
     $movieID10 = $row["movie_id"];
+    $url10 = $row["video_url"];
 }
 
 if ($result11->num_rows > 0) {
@@ -272,6 +303,7 @@ if ($result11->num_rows > 0) {
     $img11 = $row["image_path"];
     $showtime11 = $row["showtime_id"];
     $movieID11 = $row["movie_id"];
+    $url11 = $row["video_url"];
 }
 
 if ($result12->num_rows > 0) {
@@ -281,6 +313,7 @@ if ($result12->num_rows > 0) {
     $img12 = $row["image_path"];
     $showtime12 = $row["showtime_id"];
     $movieID12 = $row["movie_id"];
+    $url12 = $row["video_url"];
 }
 
 if ($result13->num_rows > 0) {
@@ -290,6 +323,7 @@ if ($result13->num_rows > 0) {
     $img13 = $row["image_path"];
     $showtime13 = $row["showtime_id"];
     $movieID13 = $row["movie_id"];
+    $url13 = $row["video_url"];
 }
 
 if ($result14->num_rows > 0) {
@@ -299,6 +333,7 @@ if ($result14->num_rows > 0) {
     $img14 = $row["image_path"];
     $showtime14 = $row["showtime_id"];
     $movieID14 = $row["movie_id"];
+    $url14 = $row["video_url"];
 }
 
 if ($result15->num_rows > 0) {
@@ -308,6 +343,7 @@ if ($result15->num_rows > 0) {
     $img15 = $row["image_path"];
     $showtime15 = $row["showtime_id"];
     $movieID15 = $row["movie_id"];
+    $url15 = $row["video_url"];
 }
 
 if ($result16->num_rows > 0) {
@@ -317,6 +353,7 @@ if ($result16->num_rows > 0) {
     $img16 = $row["image_path"];
     $showtime16 = $row["showtime_id"];
     $movieID16 = $row["movie_id"];
+    $url16 = $row["video_url"];
 }
 
 if ($result17->num_rows > 0) {
@@ -326,6 +363,7 @@ if ($result17->num_rows > 0) {
     $img17 = $row["image_path"];
     $showtime17 = $row["showtime_id"];
     $movieID17 = $row["movie_id"];
+    $url17 = $row["video_url"];
 }
 
 if ($result18->num_rows > 0) {
@@ -335,6 +373,7 @@ if ($result18->num_rows > 0) {
     $img18 = $row["image_path"];
     $showtime18 = $row["showtime_id"];
     $movieID18 = $row["movie_id"];
+    $url18 = $row["video_url"];
 }
 
 if ($result19->num_rows > 0) {
@@ -344,6 +383,7 @@ if ($result19->num_rows > 0) {
     $img19 = $row["image_path"];
     $showtime19 = $row["showtime_id"];
     $movieID19 = $row["movie_id"];
+    $url19 = $row["video_url"];
 }
 
 if ($result20->num_rows > 0) {
@@ -353,6 +393,7 @@ if ($result20->num_rows > 0) {
     $img20 = $row["image_path"];
     $showtime20 = $row["showtime_id"];
     $movieID20 = $row["movie_id"];
+    $url20 = $row["video_url"];
 }
 
 if ($result21->num_rows > 0) {
@@ -362,5 +403,6 @@ if ($result21->num_rows > 0) {
     $img21 = $row["image_path"];
     $showtime21 = $row["showtime_id"];
     $movieID21 = $row["movie_id"];
+    $url21 = $row["video_url"];
 }
 

@@ -15,7 +15,7 @@
     <!-- nav bar -->
     <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand me-auto" href="#">Cineplex</a>
+      <a class="navbar-brand me-auto" href="about.php">Cineplex</a>
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
           <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Cineplex</h5>
@@ -30,10 +30,10 @@
               <a class="nav-link" href="movies.php">Movies</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Deals</a>
+              <a class="nav-link" href="deals.php">Deals</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="about.php">About</a>
             </li>
           </ul>       
         </div>

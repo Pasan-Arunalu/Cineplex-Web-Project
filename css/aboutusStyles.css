@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(img/b0e63b94-e461-4f65-9183-e8941cb2fa6c.png);
+}
+
+header {
+    margin-top: 100px;
+    background-color: rgba(3, 19, 26, 0.9);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+section {
+    max-width: 1500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    color: snow;
+    box-shadow: 0 0 20px rgba(3, 0, 0, 0.7);
+    background-image: url(img/b0e63b94-e461-4f65-9183-e8941cb2fa6c.png);
+}
+
+p {
+    line-height: 1.6;
+    color: snow;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 30px 0;
+    /* border-bottom: 1px solid #eee; */
+    font-size: 20px;
+}
+
+.theatres{
+    height: 400px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.t1{
+    width: 48%;
+    height: 100%;
+    background-image: url(img/t2\ \(2\).jpg);
+    background-size: cover;
+    box-shadow: 0 0 20px rgba(3, 0, 0, 0.7);
+    margin-right: 55px;
+}
+
+.t2{
+    width: 48%;
+    height: 100%;
+    background-image: url(img/t2\ \(1\).jpg);
+    background-size: cover;
+    box-shadow: 0 0 20px rgba(3, 0, 0, 0.7);
+    margin-right: 35px;
+}
+
+.img1{
+    height: 400px;
+    width: 50%;
+    background-image: url(img/ddddd.jpg);
+    background-size: cover;
+    box-shadow: 0 0 20px rgba(3, 0, 0, 0.7);
+    margin-left: 25%;
+}
+
+.img2{
+    height: 400px;
+    width: 50%;
+    background-image: url(img/ppppp.jpg);
+    background-size: cover;
+    box-shadow: 0 0 20px rgba(3, 0, 0, 0.7);
+    margin-left: 25%;
+}
+
+footer {
+    background-color: rgba(3, 19, 26, 0.9);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    bottom: 0;
+    width: 100%;
+}

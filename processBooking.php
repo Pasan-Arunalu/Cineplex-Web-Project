@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check if the selected seats are already booked
     if (areSeatsBooked($seats, $bookingDate, $bookingTime)) {
         echo "<script>alert('The selected seats are already booked. Please choose different seats.');
-        window.location.href = 'index.php?booking_status=success';
+        window.location.href = 'index.php?booking_status=error';
         </script>";
     } else {
         // Insert data into the bookings table
@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Booking successful
             echo "<script>
                     alert('Booking successful!');
-                    window.location.href = 'index.php?booking_status=success';
+                    window.location.href = 'profile.php?booking_status=success';
                  </script>"; // Redirect to buyTickets.php with success status
         } else {
             // Booking failed
@@ -60,3 +60,18 @@ function areSeatsBooked($seats, $bookingDate, $bookingTime) {
     return $count > 0;
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pbstyles.css">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+</body>
+</html>

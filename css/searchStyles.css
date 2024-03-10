@@ -1,0 +1,116 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url(img/b0e63b94-e461-4f65-9183-e8941cb2fa6c.png);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    min-height: 100vh;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+}
+
+.movie-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the items horizontally */
+    align-items: center; /* Center the items vertically */
+    margin-top: 100px;
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+}
+
+.movie-details {
+    width: 450px;
+    box-sizing: border-box;
+    background-color: rgba(3, 19, 26, 0.7);
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+    text-align: center; /* Center the content inside .movie-details */
+    margin: 20px;
+    display: inline-block;
+}
+
+/* Add responsive styles for smaller screens */
+@media (max-width: 767px) {
+    .movie-details {
+        width: calc(50% - 20px); /* 50% minus margin and padding for smaller screens */
+    }
+}
+
+@media (max-width: 479px) {
+    .movie-details {
+        width: 100%; /* Full width for even smaller screens */
+    }
+}
+
+
+.movie-details h2 {
+    color: snow;
+}
+
+.movie-details p {
+    color: snow;
+}
+
+.movie-poster {
+    width: 380px;
+    height: 530px;
+    margin: 5px auto; /* Center the poster horizontally with some top margin */
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+}
+
+.buy-ticket-link,
+.watch-trailer-link {
+    display: block; /* Display as block to take full width */
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #D4FF9D;
+    color: #03131A;
+    text-decoration: none;
+    border-radius: 10px;
+    margin: 10px auto; /* Center the button horizontally with some top margin */
+    font-size: 15px;
+    font-weight: 600;
+    width: 125px;
+    transition: 1s;
+}
+
+.buy-ticket-link:hover,
+.watch-trailer-link:hover {
+    background-color: #03131A;
+    color: #D4FF9D;
+    transition: 1s;
+
+}
+
+.btwtbutton-container{
+    display: flex;
+    gap: 0;
+}
+
+.buy-ticket-link-disabled{
+    display: block; /* Display as block to take full width */
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #7a7a7a;
+    color: #03131A;
+    text-decoration: none;
+    border-radius: 10px;
+    margin: 10px auto; /* Center the button horizontally with some top margin */
+    font-size: 15px;
+    font-weight: 600;
+    width: 125px;
+    transition: 1s;
+    pointer-events: none; /* Disable pointer events */
+}
+
+footer {
+    background-color: rgba(3, 19, 26, 0.9);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    bottom: 0;
+    width: 100%;
+}

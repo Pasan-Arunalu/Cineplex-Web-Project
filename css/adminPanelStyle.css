@@ -7,14 +7,14 @@ body {
     margin: 0; 
 }
 
-.container {
+.frmcontainer {
     background-color: rgba(3, 19, 26, 0.7);
     width: 500px;
     height: 700px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 150px;
 }
 
 .caro h2 {
@@ -48,6 +48,7 @@ body {
     width: 80px;
     margin: 0;
     cursor: pointer;
+    font-size: 15px;
 }
 
 .message-container {
@@ -68,4 +69,103 @@ body {
 
 .error-message {
     background-color: #f44336;
+}
+
+.booking-container {
+    margin-top: 150px;
+    margin-left: 70px;
+    background-color: rgba(3, 19, 26, 0.7);
+    width: 500px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#bd{
+    color: #D4FF9D;
+}
+
+.bookingwrapper {
+    width: 450px;
+    height: 620px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.booking-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.booking-container th, .booking-container td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.booking-container th {
+    background-color: #f2f2f2;
+}
+
+.booking-container td{
+    color: snow;
+}
+
+
+.formcontainer2{
+    margin-top: 150px;
+    margin-left: 70px;
+    background-color: rgba(3, 19, 26, 0.7);
+    width: 500px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#addstaffbtn{
+    height: 40px;
+    width: 80px;
+    margin: 0;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+/* Styles for Staff Form Message Box */
+.staff-message-container {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.staff-message-container .success-message,
+.staff-message-container .error-message {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    display: inline-block;
+    height: 50px;
+    justify-content: center;
+}
+
+.staff-message-container .error-message {
+    background-color: #f44336;
+}
+
+.label {
+    font-size: 20px;
+    height: 30px;
+}
+
+.select {
+    height: 30px;
+    font-size: 15px;
+}
+
+#fbid{
+    margin-top: 65px;
 }

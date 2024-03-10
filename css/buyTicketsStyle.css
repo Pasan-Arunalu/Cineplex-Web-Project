@@ -153,3 +153,21 @@ body {
   background-color: #d4ff9d;
   color: #020000;
 }
+
+
+@media screen and (max-width: 767px) {
+
+  #seat-map {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 5px;
+  }
+
+  .seat {
+    height: 30px;
+  }
+
+  .btnbook {
+    font-size: 14px;
+  }
+}

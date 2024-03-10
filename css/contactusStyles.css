@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(img/b0e63b94-e461-4f65-9183-e8941cb2fa6c.png);
+}
+
+header {
+    background-color: rgba(3, 19, 26, 0.9);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+main {
+    padding: 20px;
+    margin-top: 100px;
+    color: snow;
+}
+
+h2 {
+    color: snow;
+}
+
+h3{
+    color: #fff;
+}
+
+p {
+    line-height: 1.6;
+    color: snow;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    background-image: url(img/b0e63b94-e461-4f65-9183-e8941cb2fa6c.png);
+    box-shadow: 0 0 20px rgba(3, 0, 0, 0.7);
+}
+
+.contact-info div {
+    flex: 1;
+    text-align: center;
+}
+
+footer {
+    background-color: rgba(3, 19, 26, 0.9);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    bottom: 0;
+    width: 100%;
+}
+
+.img{
+    width: 70%;
+    height: 600px;
+    margin-left: 18%;
+    background-image: url(img/kandy.jpg);
+    background-size: cover;
+    box-shadow: 0 0 20px rgba(3, 0, 0, 0.9);
+}
