@@ -313,6 +313,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["btnaddstaff"])) {
             <?php echo 'document.querySelector(".message-container").innerHTML = "";'; ?>
         }, 5000);
     </script>
+    <script>
+        // Use JavaScript to clear the session message after a certain period (e.g., 5 seconds)
+        setTimeout(function () {
+            <?php echo 'document.querySelector(".staff-message-container").innerHTML = "";'; ?>
+        }, 5000);
+    </script>
 
 </body>
 

@@ -18,7 +18,7 @@ if ($feedbackResult->num_rows > 0) {
         $feedbackTable .= '<tr>
                             <td>' . $feedbackRow['user_id'] . '</td>
                             <td>' . $feedbackRow['feedback_text'] . '</td>
-                            <td><a style="color:#03131A; background-color:snow; text-decoration:none;" href="?deletefeedback=' . $feedbackRow['user_id'] . '">Cancel</a></td>
+                            <td><a style="color:#03131A; background-color:snow; text-decoration:none;" href="?deletefeedback=' . $feedbackRow['user_id'] . '">Delete</a></td>
                         </tr>';
     }
     $feedbackTable .= '</table>';
