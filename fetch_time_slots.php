@@ -3,7 +3,7 @@
 include_once('connection.php');
 
 // Retrieve the movie title from the URL
-$encodedMovieTitle = $_GET['movie']; // Ensure you sanitize this input in a real-world scenario
+$encodedMovieTitle = $_GET['movie']; 
 
 // Decode the movie title for use in the database query
 $decodedMovieTitle = urldecode($encodedMovieTitle);

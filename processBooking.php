@@ -1,11 +1,11 @@
 <?php
 session_start();
-include("connection.php"); // Make sure to include your database connection file
+include("connection.php"); 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve data from the form
     $movieId = isset($_GET['movie_id']) ? intval($_GET['movie_id']) : 0;
-    $userId = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : 0; // Assuming you have a user session
+    $userId = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : 0; 
 
     $seats = isset($_POST['seats']) ? htmlspecialchars($_POST['seats']) : '';
     $bookingDate = isset($_POST['date']) ? htmlspecialchars($_POST['date']) : '';

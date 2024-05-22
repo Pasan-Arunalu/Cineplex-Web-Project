@@ -1,8 +1,8 @@
 <?php
-include("connection.php"); // Make sure to include your database connection file
+include("connection.php"); 
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    // Assuming you pass the booking_id as a query parameter
+
     $bookingId = isset($_GET['booking_id']) ? intval($_GET['booking_id']) : 0;
 
     // Fetch booked seats based on the booking_id

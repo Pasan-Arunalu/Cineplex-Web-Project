@@ -26,8 +26,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Successful login
         // Fetch the user data from the database
         $user_data = $result->fetch_assoc();
-        $user_id = $user_data['user_id']; // Adjust the key based on your database structure
-        $user_role = $user_data['role']; // Adjust the key based on your database structure
+        $user_id = $user_data['user_id'];
+        $user_role = $user_data['role']; 
 
         // Set session variables
         $_SESSION["user_id"] = $user_id;
@@ -38,10 +38,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: admin_panel.php");
             exit();
         } elseif ($user_role == 'staff') {
-            header("Location: admin_panel.php"); // Change 'staff.php' to the appropriate staff page
+            header("Location: admin_panel.php"); 
             exit();
         } else {
-            // Redirect to a default page or perform additional actions for other roles
+            
             header("Location: index.php");
             exit();
         }
